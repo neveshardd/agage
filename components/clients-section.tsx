@@ -54,7 +54,7 @@ export default function ClientsSection() {
                 <img
                   src={client.logo}
                   alt={client.name}
-                  className="h-16 md:h-20 object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                  className="h-16 md:h-20 object-contain transition-all duration-300"
                 />
               </div>
             </SwiperSlide>

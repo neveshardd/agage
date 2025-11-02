@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import Link from 'next/link'
 import LanguageDialog from './language-dialog'
 import MenuButton from './menu-button'
 
@@ -27,33 +26,24 @@ export default function Header() {
 
   return (
     <header
-      className={`top-0 left-0 w-full z-50 px-4 transition-all duration-500 ${
-        scrolled
-          ? 'fixed bg-[#1A3767] text-white shadow-md'
-          : 'absolute bg-transparent text-white'
-      }`}
+      className={`top-0 left-0 w-full z-50 px-4 ${scrolled
+          ? 'fixed bg-white text-[#1a3767] border-black/10 border-b shadow-md'
+          : 'absolute bg-transparent text-white border-white/20 border-b'
+        }`}
     >
       <div className="flex justify-between items-center py-6 max-w-6xl mx-auto">
         {/* Lado esquerdo */}
-        <div className="flex space-x-4">
+        <div className={`flex space-x-4 pr-6 border-r md:border-none ${scrolled ? 'border-none' : ''}`}>
           <MenuButton />
           <LanguageDialog />
         </div>
 
-        {/* Logo */}
-        <Link href="/">
-          <img
-            src={'/agage.png'}
-            alt="Logo"
-            className="h-8 transition-all duration-300"
-          />
-        </Link>
+        <img src="/agage-colors.png" alt="Agage Construtora LTDA" className={`w-40 ${scrolled ? 'block' : 'hidden'}`} />
 
         {/* Botão direito */}
         <a
           href="#contato"
-          className={`uppercase font-semibold hover:underline transition-all duration-300 hidden lg:block ${'text-white'
-          }`}
+          className={`uppercase font-semibold hover:underline transition-all duration-300 text-sm lg:text-lg ${scrolled ? 'text-[#1a3767] hidden md:block' : 'text-white'}`}
         >
           Entrar em contato
         </a>

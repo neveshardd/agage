@@ -1,7 +1,8 @@
 "use client"
 
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
 import React from "react"
+import { FaBars } from "react-icons/fa"
 
 const items = [
   { title: "Início", url: "#hero" },
@@ -18,15 +19,16 @@ export default function MenuButton() {
   return (
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild>
-        <button className="border-none h-12 text-white bg-transparent items-start flex flex-col justify-between w-full cursor-pointer hover:bg-transparent hover:text-white">
-          <img src="/menu.png" alt="Menu" className="w-10" />
+        <button className="border-none h-full text-current bg-transparent items-start flex flex-col justify-between w-full cursor-pointer hover:bg-transparent hover:text-[#F59F26] transition-colors duration-100">
+          <FaBars size={38}/>
           <p className="uppercase font-semibold">Menu</p>
         </button>
       </SheetTrigger>
 
       <SheetContent side="left" className="w-64 bg-[#1A3767] text-black p-6">
         <SheetHeader>
-          <SheetTitle className="opacity-0">Menu de Navegação</SheetTitle>
+          <SheetTitle className="hidden">Menu de Navegação</SheetTitle>
+          <SheetDescription className="hidden">Descrição do sheet</SheetDescription>
         </SheetHeader>
 
         <div className="flex flex-col gap-4 mt-4">

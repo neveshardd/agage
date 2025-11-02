@@ -62,16 +62,9 @@ export default function HeroSection() {
         </SwiperSlide>
       </Swiper>
 
-      <div className="absolute inset-0 flex flex-col justify-center items-start px-4 md:px-4 lg:px-16 xl:px-45 text-white z-10 bg-[#1E356B]/70">
-        <p
-          className="font-[Aboreto] font-semibold text-lg md:text-4xl md:mb-8 tracking-[0.25em] mb-4 uppercase"
-          style={{ letterSpacing: '0.2em' }}
-        >
-          O PROGRESSO
-        </p>
-        <h1 className="font-[Aclonica] text-5xl md:text-8xl font-bold leading-12 md:leading-20 max-w-xl text-[#F59F26]">
-          É O NOSSO <br /> PRODUTO
-        </h1>
+      <div className="absolute inset-0 flex flex-col justify-center gap-4 items-center px-4 md:px-4 lg:px-16 xl:px-45 text-white z-10 bg-black/50">
+        <img src="/agage.png" alt="Agage Construtora LTDA" />
+        <h1 className='tracking-[0.8em] md:text-3xl'>CONSTRUTORA</h1>
       </div>
     </div>
   )

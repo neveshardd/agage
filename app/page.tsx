@@ -1,6 +1,5 @@
 import AboutSection from "@/components/about-section";
 import ClientsSection from "@/components/clients-section";
-import ContactSection from "@/components/contact-section";
 import HeroSection from "@/components/hero-section";
 import Footer from "@/components/layout/footer";
 import Header from "@/components/layout/header";
@@ -13,12 +12,11 @@ export default function Home() {
     <div className="overflow-x-hidden">
       <Header/>
       <HeroSection/>
-      <ClientsSection/>
       <AboutSection/>
       <MissionSection/>
       <ServicesSection/>
       <ProjectsSection/>
-      <ContactSection/>
+      <ClientsSection/>
       <Footer/>
     </div>
   );
