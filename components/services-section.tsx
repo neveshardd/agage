@@ -1,59 +1,19 @@
-import { Anchor, Building2, Factory, Hammer, Mountain, Network, RefreshCcw, Ruler, ShieldCheck, Waves } from "lucide-react"
-import { BiCube } from "react-icons/bi"
-import {
-  FaRoad,
-} from "react-icons/fa"
+import Image from "next/image"
 
 export default function ServicesSection() {
   const services = [
-    {
-      icon: <Building2 size={36} />,
-      title: "Obras Civis",
-    },
-    {
-      icon: <FaRoad size={36} />,
-      title: "Pavimentação",
-    },
-    {
-      icon: <Hammer size={36} />,
-      title: "Escavação",
-    },
-    {
-      icon: <ShieldCheck size={36} />,
-      title: "Impermeabilização",
-    },
-    {
-      icon: <Mountain size={36} />,
-      title: "Terraplenagem",
-    },
-    {
-      icon: <Network size={36} />,
-      title: "Obras de Infraestrutura",
-    },
-    {
-      icon: <Anchor size={36} />,
-      title: "Obras de Contenção",
-    },
-    {
-      icon: <RefreshCcw size={36} />,
-      title: "Conserva de Estradas",
-    },
-    {
-      icon: <Waves size={36} />,
-      title: "Obras de Drenagem",
-    },
-    {
-      icon: <Factory size={36} />,
-      title: "Obras Industriais",
-    },
-    {
-      icon: <Ruler size={36} />,
-      title: "Obras de Artes Especiais",
-    },
-    {
-      icon: <BiCube size={36} />,
-      title: "Tratamento de Estrutura",
-    },
+    { imageSrc: "/services/construcao.png", title: "Obras Civis" },
+    { imageSrc: "/services/estrada.png", title: "Pavimentação" },
+    { imageSrc: "/services/escavacao.png", title: "Escavação" },
+    { imageSrc: "/services/tecido-impermeavel.png", title: "Impermeabilização" },
+    { imageSrc: "/services/trator.png", title: "Terraplenagem" },
+    { imageSrc: "/services/pilares.png", title: "Obras de Infraestrutura" },
+    { imageSrc: "/services/rio.png", title: "Obras de Contenção" },
+    { imageSrc: "/services/canteiro-de-obras.png", title: "Conserva de Estradas" },
+    { imageSrc: "/services/drenagem.png", title: "Obras de Drenagem" },
+    { imageSrc: "/services/industria.png", title: "Obras Industriais" },
+    { imageSrc: "/services/bridge-over-water.png", title: "Obras de Artes Especiais" },
+    { imageSrc: "/services/pavimentacao-tatil.png", title: "Tratamento de Estrutura" },
   ]
 
   return (
@@ -77,8 +37,15 @@ export default function ServicesSection() {
             key={index}
             className="group flex flex-col items-center text-center p-6 rounded-xl bg-white shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
           >
-            <div className="flex items-center justify-center w-20 h-20 rounded-full bg-[#1A3767]/10 text-[#1A3767] mb-4 group-hover:bg-[#1A3767] group-hover:text-white transition-colors duration-300">
-              {service.icon}
+            <div className="flex items-center justify-center w-20 h-20 rounded-full bg-[#1A3767]/10 mb-4 group-hover:bg-[#1A3767]/20 transition-colors duration-300">
+              <Image
+                src={service.imageSrc}
+                alt={service.title}
+                width={48}
+                height={48}
+                className="object-contain"
+                priority={index < 4}
+              />
             </div>
             <h3 className="font-semibold text-[#1A3767] text-lg">
               {service.title}

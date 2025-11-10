@@ -35,7 +35,7 @@ export default function Header() {
         {/* Lado esquerdo */}
         <div className={`flex space-x-4 pr-6 border-r md:border-none ${scrolled ? 'border-none' : ''}`}>
           <MenuButton />
-          <LanguageDialog />
+          {/* <LanguageDialog /> */}
         </div>
 
         <img src="/agage-colors.png" alt="Agage Construtora LTDA" className={`w-40 ${scrolled ? 'block' : 'hidden'}`} />
