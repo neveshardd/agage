@@ -6,27 +6,46 @@ import MenuButton from './menu-button'
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
+  const [hideHeader, setHideHeader] = useState(false)
 
   useEffect(() => {
     const heroSection = document.querySelector('#hero')
-    if (!heroSection) return
+    const clientsSection = document.querySelector('#clientes')
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const entry = entries[0]
-        // Quando o hero sai da tela (menos de 10% visível), ativa o header fixo
-        setScrolled(!entry.isIntersecting)
-      },
-      { threshold: 0.1 }
-    )
+    const heroObserver = heroSection
+      ? new IntersectionObserver(
+          (entries) => {
+            const entry = entries[0]
+            // Quando o hero sai da tela (menos de 10% visível), ativa o header fixo
+            setScrolled(!entry.isIntersecting)
+          },
+          { threshold: 0.1 }
+        )
+      : null
 
-    observer.observe(heroSection)
-    return () => observer.disconnect()
+    const clientsObserver = clientsSection
+      ? new IntersectionObserver(
+          (entries) => {
+            const entry = entries[0]
+            // Quando a seção de clientes estiver visível, oculta o header
+            setHideHeader(entry.isIntersecting)
+          },
+          { threshold: 0.2 }
+        )
+      : null
+
+    if (heroSection && heroObserver) heroObserver.observe(heroSection)
+    if (clientsSection && clientsObserver) clientsObserver.observe(clientsSection)
+
+    return () => {
+      heroObserver?.disconnect()
+      clientsObserver?.disconnect()
+    }
   }, [])
 
   return (
     <header
-      className={`top-0 left-0 w-full z-50 px-4 ${scrolled
+      className={`${hideHeader ? 'hidden' : 'block'} top-0 left-0 w-full z-50 px-4 ${scrolled
           ? 'fixed bg-white text-[#1a3767] border-black/10 border-b shadow-md'
           : 'absolute bg-transparent text-white border-white/20 border-b'
         }`}
