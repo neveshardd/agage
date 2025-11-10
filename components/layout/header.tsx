@@ -38,7 +38,7 @@ export default function Header() {
           {/* <LanguageDialog /> */}
         </div>
 
-        <img src="/agage-colors.png" alt="Agage Construtora LTDA" className={`w-40 ${scrolled ? 'block' : 'hidden'}`} />
+        <img src="/agage-colors.png" alt="Agage Construtora LTDA" className={`w-40 ml-18 ${scrolled ? 'block' : 'hidden'}`} />
 
         {/* Botão direito */}
         <a

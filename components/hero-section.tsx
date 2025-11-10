@@ -63,7 +63,7 @@ export default function HeroSection() {
       </Swiper>
 
       <div className="absolute inset-0 flex flex-col justify-center gap-4 items-center px-4 md:px-4 lg:px-16 xl:px-45 text-white z-10 bg-black/50">
-        <img src="/agage.png" alt="Agage Construtora LTDA" />
+        <img src="/agage-colors.png" alt="Agage Construtora LTDA" />
         <h1 className='tracking-[0.8em] md:text-3xl'>CONSTRUTORA</h1>
       </div>
     </div>
