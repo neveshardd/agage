@@ -6,11 +6,11 @@ import { FaBars } from "react-icons/fa"
 
 const items = [
   { title: "Início", url: "#hero" },
-  { title: "Clientes", url: "#clientes" },
   { title: "Quem somos?", url: "#quemsomos" },
-  { title: "Missão e Valores", url: "#missao" },
-  { title: "Serviços", url: "#servicos" },
+  { title: "Missão, Visão e Valores", url: "#missao" },
+  { title: "Nossos Serviços", url: "#servicos" },
   { title: "Principais Obras", url: "#obras" },
+  { title: "Clientes", url: "#clientes" },
   { title: "Contato", url: "#contato" }
 ]
 
