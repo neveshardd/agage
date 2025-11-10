@@ -1,6 +1,7 @@
 'use client'
 
 import emailjs from '@emailjs/browser'
+import Link from 'next/link'
 import { useState } from 'react'
 
 export default function FooterSection() {
@@ -124,7 +125,9 @@ export default function FooterSection() {
         <div className="mx-auto px-6 flex flex-col lg:flex-row justify-between items-center gap-2 text-sm">
           <p>Agage Construtora LTDA © 2025 - Todos os direitos reservados.</p>
           <p className="text-white hover:underline cursor-pointer transition">
-            Desenvolvido por José Eugênio
+            <Link href="https://github.com/neveshardd/agage">
+              Desenvolvido por José Eugênio
+            </Link>
           </p>
         </div>
       </footer>
