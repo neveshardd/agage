@@ -1,34 +1,82 @@
 'use client'
 
-import emailjs from '@emailjs/browser'
+import { sendEmailAction } from '@/app/actions/sendEmail'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
+import { Check } from 'lucide-react'
+import gsap from 'gsap'
 
 export default function FooterSection() {
   const [sending, setSending] = useState(false)
   const [sent, setSent] = useState(false)
+  const [error, setError] = useState<string | null>(null)
+
+  const buttonRef = useRef<HTMLButtonElement>(null)
+  const checkRef = useRef<SVGSVGElement>(null)
+  const textRef = useRef<HTMLSpanElement>(null)
+
+  useEffect(() => {
+    let timer: NodeJS.Timeout
+    let tl: gsap.core.Timeline
+
+    if (sent && buttonRef.current && checkRef.current && textRef.current) {
+      tl = gsap.timeline()
+      
+      tl.to(textRef.current, { opacity: 0, duration: 0.2 })
+        .to(
+          buttonRef.current,
+          {
+            width: '56px',
+            height: '56px',
+            borderRadius: '50%',
+            backgroundColor: '#22c55e', // Green 500
+            padding: 0,
+            duration: 0.5,
+            ease: 'back.out(1.5)',
+          },
+          '<'
+        )
+        .fromTo(
+          checkRef.current,
+          { y: 10, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.4, ease: 'back.out(2)' }
+        )
+
+      // Após 5 segundos, reverte a animação e permite novo envio
+      timer = setTimeout(() => {
+        tl.reverse().then(() => {
+          setSent(false)
+          gsap.set([buttonRef.current, textRef.current, checkRef.current], { clearProps: 'all' })
+        })
+      }, 5000)
+    }
+
+    return () => {
+      if (timer) clearTimeout(timer)
+      if (tl) tl.kill()
+    }
+  }, [sent])
 
   const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setSending(true)
+    setError(null)
+    setSent(false)
 
-    const formData = new FormData(e.currentTarget)
-    const data = {
-      from_name: formData.get('from_name'),
-      reply_to: formData.get('reply_to'),
-      message: formData.get('message'),
-    }
+    const form = e.currentTarget
+    const formData = new FormData(form)
 
     try {
-      await emailjs.send(
-        'service_0sg1evf',
-        'template_gj3vqee',
-        data,
-        'gNiej07huHfotH8Dh'
-      )
-      setSent(true)
-    } catch (error) {
-      console.error(error)
+      const result = await sendEmailAction(formData)
+      if (result?.error) {
+        setError(result.error)
+      } else {
+        setSent(true)
+        form.reset()
+      }
+    } catch (err) {
+      console.error(err)
+      setError('Erro inesperado ao enviar o e-mail.')
     } finally {
       setSending(false)
     }
@@ -107,13 +155,25 @@ export default function FooterSection() {
                 className="border border-black/10 rounded-md px-4 py-3 w-full h-40 resize-none focus:outline-none focus:ring-2 focus:ring-[#1B3E9F]/30"
               />
 
-              <div className="flex justify-center">
+              <div className="flex flex-col items-center gap-4 min-h-[100px]">
                 <button
+                  ref={buttonRef}
                   type="submit"
-                  className="bg-[#FF9800] text-white font-medium px-10 py-3 rounded-md hover:bg-[#e68a00] transition"
+                  disabled={sending || sent}
+                  className="relative flex items-center justify-center bg-[#FF9800] text-white font-medium rounded-md hover:bg-[#e68a00] transition-colors disabled:opacity-70 w-[150px] h-[52px]"
                 >
-                  Enviar
+                  <span ref={textRef} className="absolute inset-0 flex items-center justify-center transition-opacity">
+                    {sending ? 'Enviando...' : 'Enviar'}
+                  </span>
+                  <Check
+                    ref={checkRef}
+                    size={28}
+                    className="absolute opacity-0"
+                    strokeWidth={3}
+                  />
                 </button>
+                {/* Removemos a mensagem estática "E-mail enviado..." pois o check agora dá o feedback visual claro */}
+                {error && <p className="text-red-500 font-medium">{error}</p>}
               </div>
             </form>
           </div>
