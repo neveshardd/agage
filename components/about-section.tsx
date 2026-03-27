@@ -5,7 +5,7 @@ export default function AboutSection() {
 
         <div className="w-full md:w-1/2">
           <img
-            src="/samuel-cruz-o8C5SxNCGaw-unsplash.jpg"
+            src="/mika-baumeister-74tW4FXP4Hw-unsplash.jpg"
             alt="Equipe da Construtora Agage"
             className="w-full h-[300px] md:h-[500px] object-cover rounded-lg shadow-lg"
           />

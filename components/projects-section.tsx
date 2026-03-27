@@ -7,17 +7,17 @@ export default function ProjectsSection() {
     },
     {
       title: "Base Aérea de Santa Cruz - RJ",
-      client: "Engeform Engenharia",
+      client: "Eterc Engenharia",
       service: "Montagem e locação de equipamentos",
     },
     {
       title: "Aeroporto Santos Dumont - RJ",
-      client: "Engeform Engenharia",
+      client: "Eterc Engenharia",
       service: "Implantação e locação de equipamentos",
     },
     {
       title: "Rio Piracicaba - MG",
-      client: "EITEC Construções",
+      client: "BTEC Construções",
       service: "Obra de Drenagem",
     },
     {
@@ -27,7 +27,7 @@ export default function ProjectsSection() {
     },
     {
       title: "Ferrovia Norte e Sul - GO",
-      client: "RUMO Logística / Savery",
+      client: "RUMO Logística / Sacyr",
       service: "Obra de Drenagem",
     },
     {
@@ -52,7 +52,7 @@ export default function ProjectsSection() {
     },
     {
       title: "Aeroporto de Macaé - RJ",
-      client: "Construtora Comercial e Engenharia",
+      client: "Conserva",
       service: "Execução e locação de equipamentos",
     },
     {
@@ -62,7 +62,7 @@ export default function ProjectsSection() {
     },
     {
       title: "Ferrovia de Integração do Centro-Oeste",
-      client: "Vereda Duarte Serviços",
+      client: "FICO",
       service: "Execução de obras de arte corrente",
     },
     {
@@ -70,6 +70,22 @@ export default function ProjectsSection() {
       client: "Prefeitura de Anápolis",
       service: "Serviço de pavimentação asfáltica e drenagem pluvial",
     },
+    {
+      title: "Residência Oficial CNI - DF",
+      client: "Confederação Nacional da Indústria",
+      service: "Execução de Obras Civis.",
+    },
+    {
+      title: "USINA HIDRELÉTRICA DE QUEIMADOS - MG",
+      client: "Consórcio CEMIG e CEB",
+      service: "Execução de Obras Civis e Barragens",
+    },
+    {
+      title: "FÁBRICA DE CIMENTOS - DF",
+      client: "VOTORANTIM",
+      service: "Execução de Obras Industriais",
+    },
+
   ]
 
   return (
