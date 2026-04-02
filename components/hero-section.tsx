@@ -27,13 +27,6 @@ export default function HeroSection() {
         </SwiperSlide>
         <SwiperSlide>
           <img
-            src="/votorantim-26-03-2026-02.jpeg"
-            alt=""
-            className='h-full w-full object-cover'
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
             src="/ian-WKfoiXpIG_c-unsplash.jpg"
             alt=""
             className='h-full w-full object-cover'
