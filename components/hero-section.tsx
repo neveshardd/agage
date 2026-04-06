@@ -31,7 +31,7 @@ export default function HeroSection() {
         </SwiperSlide>
         <SwiperSlide>
           <Image
-            src="/votorantim-26-03-2026.jpg"
+            src="/votorantim-26-03-2026.jpeg"
             alt="Hero Background 5"
             fill
             className='object-cover'
