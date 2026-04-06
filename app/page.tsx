@@ -1,5 +1,6 @@
 import AboutSection from "@/components/about-section";
 import ClientsSection from "@/components/clients-section";
+import CertificatesSection from "@/components/certificates-section";
 import HeroSection from "@/components/hero-section";
 import Footer from "@/components/layout/footer";
 import Header from "@/components/layout/header";
@@ -19,6 +20,7 @@ export default function Home() {
       <MontagemSection/>
       <ProjectsSection/>
       <ClientsSection/>
+      <CertificatesSection/>
       <Footer/>
     </div>
   );
