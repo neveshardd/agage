@@ -6,6 +6,7 @@ import Header from "@/components/layout/header";
 import MissionSection from "@/components/mission-section";
 import ProjectsSection from "@/components/projects-section";
 import ServicesSection from "@/components/services-section";
+import MontagemSection from "@/components/montagem-section";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <AboutSection/>
       <MissionSection/>
       <ServicesSection/>
+      <MontagemSection/>
       <ProjectsSection/>
       <ClientsSection/>
       <Footer/>

@@ -1,13 +1,17 @@
+import Image from "next/image"
+
 export default function AboutSection() {
   return (
     <section className="bg-gray-50 py-24 md:py-32 px-4 md:px-0" id="quemsomos">
       <div className="flex flex-col md:flex-row items-center md:items-start gap-10 max-w-6xl mx-auto">
 
-        <div className="w-full md:w-1/2">
-          <img
-            src="/mika-baumeister-74tW4FXP4Hw-unsplash.jpg"
+        <div className="w-full md:w-1/2 relative h-[300px] md:h-[500px]">
+          <Image
+            src="/IMG_0506.jpg"
             alt="Equipe da Construtora Agage"
-            className="w-full h-[300px] md:h-[500px] object-cover rounded-lg shadow-lg"
+            fill
+            className="object-cover rounded-lg shadow-lg"
+            unoptimized
           />
         </div>
 

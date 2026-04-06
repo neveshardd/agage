@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import MenuButton from './menu-button'
 
@@ -56,7 +57,17 @@ export default function Header() {
           {/* <LanguageDialog /> */}
         </div>
 
-        <img src="/agage-colors.png" alt="Agage Construtora LTDA" className={`w-40 ml-18 ${scrolled ? 'block' : 'hidden'}`} />
+        <div className={`relative w-40 h-8 ml-18 ${scrolled ? 'block' : 'hidden'}`}>
+          <Image
+            src="/agage-colors.png"
+            alt="Agage Construtora LTDA"
+            fill
+            className="object-contain"
+            priority
+            loading="eager"
+            unoptimized
+          />
+        </div>
 
         {/* Botão direito */}
         <a

@@ -1,3 +1,5 @@
+import Image from "next/image"
+
 export default function MissionSection() {
   return (
     <section className="max-w-6xl mx-auto px-6 md:px-0 py-24 md:pb-32 text-center" id="missao">
@@ -13,11 +15,13 @@ export default function MissionSection() {
       <div className="grid md:grid-cols-3 gap-10">
         {/* Card 1 - Missão */}
         <div className="group relative rounded-lg overflow-hidden border transition-all duration-500">
-          <div className="h-64 overflow-hidden">
-            <img
+          <div className="h-64 overflow-hidden relative">
+            <Image
               src="/WhatsApp-Image-2022-09-13-at-18.49.39 (2).jpeg"
               alt="Missão"
-              className="w-full h-full object-cover transition-transform duration-500"
+              fill
+              className="object-cover transition-transform duration-500 group-hover:scale-110"
+              unoptimized
             />
           </div>
           <div className="p-8">
@@ -34,11 +38,13 @@ export default function MissionSection() {
 
         {/* Card 2 - Visão */}
         <div className="group relative border rounded-lg overflow-hidden transition-all duration-500">
-          <div className="h-64 overflow-hidden">
-            <img
+          <div className="h-64 overflow-hidden relative">
+            <Image
               src="/WhatsApp-Image-2022-09-13-at-18.46.16-e1663107352503 (2).jpeg"
               alt="Visão"
-              className="w-full h-full object-cover transition-transform duration-500"
+              fill
+              className="object-cover transition-transform duration-500 group-hover:scale-110"
+              unoptimized
             />
           </div>
           <div className="p-8">
@@ -55,11 +61,13 @@ export default function MissionSection() {
 
         {/* Card 3 - Valores */}
         <div className="group relative border rounded-lg overflow-hidden transition-all duration-500">
-          <div className="h-64 overflow-hidden">
-            <img
+          <div className="h-64 overflow-hidden relative">
+            <Image
               src="/WhatsApp-Image-2022-09-13-at-19.03.15-e1663106754639 (2).jpeg"
               alt="Valores"
-              className="w-full h-full object-cover transition-transform duration-500"
+              fill
+              className="object-cover transition-transform duration-500 group-hover:scale-110"
+              unoptimized
             />
           </div>
           <div className="p-8">
@@ -67,11 +75,11 @@ export default function MissionSection() {
               Valores
             </h3>
             <ul className="text-gray-700 leading-relaxed text-start list-disc list-inside space-y-1">
+              <li>Segurança e bem-estar</li>
               <li>Satisfação do cliente</li>
               <li>Trabalho em equipe</li>
               <li>Comunicação clara e precisa</li>
               <li>Comprometimento e ética</li>
-              <li>Proporcionar prosperidade</li>
             </ul>
           </div>
         </div>

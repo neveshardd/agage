@@ -2,6 +2,7 @@
 
 import { sendEmailAction } from '@/app/actions/sendEmail'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState, useEffect, useRef } from 'react'
 import { Check } from 'lucide-react'
 import gsap from 'gsap'
@@ -21,7 +22,7 @@ export default function FooterSection() {
 
     if (sent && buttonRef.current && checkRef.current && textRef.current) {
       tl = gsap.timeline()
-      
+
       tl.to(textRef.current, { opacity: 0, duration: 0.2 })
         .to(
           buttonRef.current,
@@ -88,24 +89,31 @@ export default function FooterSection() {
         {/* LADO ESQUERDO - fundo full width, conteúdo centralizado até max-w-6xl */}
         <div className="relative w-full overflow-hidden">
           {/* imagem de fundo (full-bleed dentro da coluna) */}
-          <div
-            aria-hidden
-            className="absolute inset-0 bg-center bg-cover"
-            style={{
-              backgroundImage: "url('/alexandr_bendus-8aVMSi7obhQ-unsplash.jpg')",
-            }}
-          />
+          <div aria-hidden className="absolute inset-0">
+            <Image
+              src="/IZXX4329.jpeg"
+              alt="Background"
+              fill
+              className="object-cover"
+              priority
+              unoptimized
+            />
+          </div>
           {/* overlay para contraste */}
-          <div className="absolute inset-0 bg-white/90" />
+          <div className="absolute inset-0 bg-white/70" />
 
           {/* conteúdo limitado à max-w-6xl e centralizado na coluna */}
           <div className="relative z-10 flex justify-center">
             <div className="max-w-6xl w-full px-6 lg:px-10 py-16 flex flex-col justify-center">
-              <img
-                src="/agage-colors.png"
-                alt="Logo Agage"
-                className="w-44 md:w-56 mb-6"
-              />
+              <div className="relative w-44 md:w-56 h-20 mb-6">
+                <Image
+                  src="/agage-colors.png"
+                  alt="Logo Agage"
+                  fill
+                  className="object-contain object-left"
+                  unoptimized
+                />
+              </div>
 
               <div className="space-y-6 max-w-md">
                 <div>

@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react"
 import "swiper/css"
 import "swiper/css/autoplay"
 import { Autoplay } from "swiper/modules"
+import Image from "next/image"
 
 export default function ClientsSection() {
   const clients = [
@@ -53,12 +54,16 @@ export default function ClientsSection() {
         >
           {clients.map((client, index) => (
             <SwiperSlide key={index}>
-              <div className="flex items-center justify-center">
-                <img
-                  src={client.logo}
-                  alt={client.name}
-                  className="h-16 md:h-20 object-contain transition-all duration-300"
-                />
+              <div className="flex items-center justify-center p-4">
+                <div className="relative w-full h-16 md:h-20">
+                  <Image
+                    src={client.logo}
+                    alt={client.name}
+                    fill
+                    className="object-contain transition-all duration-300"
+                    unoptimized
+                  />
+                </div>
               </div>
             </SwiperSlide>
           ))}
