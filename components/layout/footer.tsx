@@ -134,8 +134,8 @@ export default function FooterSection() {
           </div>
         </div>
 
-        {/* LADO DIREITO - fundo branco, formulário limitado à max-w-6xl */}
-        <div className="bg-white flex justify-center">
+        {/* LADO DIREITO - fundo cinza, formulário limitado à max-w-6xl */}
+        <div className="bg-gray-50 flex justify-center">
           <div className="w-full px-6 lg:px-10 py-16 flex flex-col justify-start">
             <h2 className="text-3xl md:text-4xl font-semibold text-[#1B3E9F] mb-6">Contato</h2>
 
@@ -189,10 +189,10 @@ export default function FooterSection() {
       </div>
 
       {/* RODAPÉ full width; conteúdo interno também limitado a max-w-6xl */}
-      <footer className="bg-gray-500 text-white text-center px-4 py-6">
+      <footer className="bg-white text-gray-600 text-center px-4 py-6">
         <div className="mx-auto px-6 flex flex-col lg:flex-row justify-between items-center gap-2 text-sm">
           <p>Agage Construtora LTDA © 2025 - Todos os direitos reservados.</p>
-          <p className="text-white hover:underline cursor-pointer transition">
+          <p className="hover:text-[#1B3E9F] hover:underline cursor-pointer transition">
             <Link href="https://github.com/neveshardd/agage">
               Desenvolvido por José Eugênio
             </Link>
