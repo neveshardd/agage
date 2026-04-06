@@ -1,11 +1,9 @@
 import Image from "next/image"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
 
 export default function MontagemSection() {
   const images = [
-    { src: "/OFAS0010.jpeg", alt: "Trabalhador em manutenção industrial" },
-    { src: "/MGKA9574.jpeg", alt: "Estrutura industrial metálica" },
+    { src: "/OFAS0010.JPEG", alt: "Trabalhador em manutenção industrial" },
+    { src: "/MGKA9574.JPEG", alt: "Estrutura industrial metálica" },
     { src: "/BJEL1561.JPG", alt: "Equipe de engenheiros em fábrica" },
   ]
 

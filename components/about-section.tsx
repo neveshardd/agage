@@ -7,7 +7,7 @@ export default function AboutSection() {
 
         <div className="w-full md:w-1/2 relative h-[300px] md:h-[500px]">
           <Image
-            src="/IMG_0506.jpg"
+            src="/IMG_0506.JPG"
             alt="Equipe da Construtora Agage"
             fill
             className="object-cover rounded-lg shadow-lg"
