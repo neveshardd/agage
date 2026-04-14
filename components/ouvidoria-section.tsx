@@ -8,21 +8,21 @@ export default function OuvidoriaSection() {
         
         {/* QR Code Section */}
         <div className="mb-12">
-          <h2 className="text-white text-3xl font-bold mb-8 uppercase tracking-wider">
+          <h2 className="text-white text-4xl font-black mb-10 uppercase tracking-[0.3em]">
             Canal de Ouvidoria
           </h2>
-          <div className="bg-white p-4 rounded-2xl inline-block shadow-2xl">
+          <div className="inline-block relative">
             <Image
               src="/ouvidoria-qrcode.png"
               alt="QR Code Ouvidoria Agage"
-              width={220}
-              height={220}
-              className="object-contain"
+              width={350}
+              height={350}
+              className="object-contain invert grayscale brightness-[1.2] mix-blend-screen"
               unoptimized
             />
           </div>
-          <p className="text-white/60 text-sm mt-4 font-medium uppercase tracking-widest">
-            Aponte a câmera para denunciar
+          <p className="text-white/40 text-sm mt-8 font-medium uppercase tracking-[0.2em]">
+            Escaneie para uma denúncia segura e anônima
           </p>
         </div>
 
