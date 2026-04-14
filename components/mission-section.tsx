@@ -40,7 +40,7 @@ export default function MissionSection() {
         <div className="group relative border rounded-lg overflow-hidden transition-all duration-500">
           <div className="h-64 overflow-hidden relative">
             <Image
-              src="/DBNE5418.JPEG"
+              src="/DBNE5418.jpeg"
               alt="Visão"
               fill
               className="object-cover object-bottom transition-transform duration-500 group-hover:scale-110"
