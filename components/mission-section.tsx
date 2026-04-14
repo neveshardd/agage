@@ -29,9 +29,9 @@ export default function MissionSection() {
               Missão
             </h3>
             <p className="text-gray-700 text-start leading-relaxed">
-              Gerar empregos e contribuir para o desenvolvimento socioeconômico
-              do Brasil, atuando com qualidade, credibilidade e compromisso em
-              cada obra executada.
+              Prover soluções de engenharia e montagem industrial de alta complexidade, 
+              impulsionando o progresso nacional através de execuções precisas, seguras 
+              e pautadas pela excelência técnica.
             </p>
           </div>
         </div>
@@ -40,10 +40,10 @@ export default function MissionSection() {
         <div className="group relative border rounded-lg overflow-hidden transition-all duration-500">
           <div className="h-64 overflow-hidden relative">
             <Image
-              src="/WhatsApp-Image-2022-09-13-at-18.46.16-e1663107352503 (2).jpeg"
+              src="/DBNE5418.jpeg"
               alt="Visão"
               fill
-              className="object-cover transition-transform duration-500 group-hover:scale-110"
+              className="object-cover object-bottom transition-transform duration-500 group-hover:scale-110"
               unoptimized
             />
           </div>
@@ -52,9 +52,9 @@ export default function MissionSection() {
               Visão
             </h3>
             <p className="text-gray-700 text-start leading-relaxed">
-              Ser reconhecida nacionalmente como referência em construção civil,
-              promovendo inovação, sustentabilidade e excelência em gestão e
-              execução de projetos.
+              Consolidar-se como o parceiro mais confiável do setor de infraestrutura no Brasil, 
+              sendo referência em inovação, gestão moderna e entrega de resultados excepcionais 
+              em cada projeto.
             </p>
           </div>
         </div>
@@ -75,11 +75,11 @@ export default function MissionSection() {
               Valores
             </h3>
             <ul className="text-gray-700 leading-relaxed text-start list-disc list-inside space-y-1">
-              <li>Segurança e bem-estar</li>
-              <li>Satisfação do cliente</li>
-              <li>Trabalho em equipe</li>
-              <li>Comunicação clara e precisa</li>
-              <li>Comprometimento e ética</li>
+              <li><strong>Segurança Absoluta:</strong> Integridade das pessoas acima de tudo.</li>
+              <li><strong>Foco em Resultados:</strong> Eficiência total e zero retrabalho.</li>
+              <li><strong>Ética e Compliance:</strong> Rigorosos padrões de integridade.</li>
+              <li><strong>Trabalho Colaborativo:</strong> Valorização do capital humano.</li>
+              <li><strong>Respeito ao Cliente:</strong> Agilidade e transparência total.</li>
             </ul>
           </div>
         </div>

@@ -3,8 +3,8 @@ import Image from "next/image"
 export default function MontagemSection() {
   const images = [
     { src: "/OFAS0010.JPEG", alt: "Trabalhador em manutenção industrial" },
-    { src: "/MGKA9574.JPEG", alt: "Estrutura industrial metálica" },
-    { src: "/BJEL1561.JPG", alt: "Equipe de engenheiros em fábrica" },
+    { src: "/BXYW7288.JPEG", alt: "Estrutura industrial metálica" },
+    { src: "/HDYD2285.JPG", alt: "Equipe de engenheiros em fábrica" },
   ]
 
   return (

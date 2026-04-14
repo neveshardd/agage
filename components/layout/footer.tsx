@@ -91,10 +91,10 @@ export default function FooterSection() {
           {/* imagem de fundo (full-bleed dentro da coluna) */}
           <div aria-hidden className="absolute inset-0">
             <Image
-              src="/IZXX4329.JPEG"
+              src="/UCUO6246.JPG"
               alt="Background"
               fill
-              className="object-cover"
+              className="object-cover object-bottom"
               priority
               unoptimized
             />
