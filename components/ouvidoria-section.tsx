@@ -6,14 +6,14 @@ export default function OuvidoriaSection() {
     <section className="w-full bg-[#1A3767] py-8 md:py-12 px-6 overflow-hidden" id="ouvidoria">
       <div className="max-w-6xl mx-auto flex flex-col items-center">
         
-        {/* Title - Reduced bottom margin */}
-        <h2 className="text-white text-3xl md:text-5xl font-semibold mb-4 md:mb-6 uppercase tracking-tight text-center">
+        {/* Superior Title - Adjusted spacing */}
+        <h2 className="text-white text-3xl md:text-5xl font-semibold mb-6 md:mb-10 uppercase tracking-wide">
           Espaço do colaborador
         </h2>
         
-        {/* QR Code/Logo Section - Using a tighter container to eliminate image-internal whitespace issues */}
-        <div className="w-full max-w-[800px] flex justify-center -my-10 md:-my-20">
-          <div className="relative w-full aspect-[21/9]">
+        {/* QR Code/Logo Section - Balanced size and spacing */}
+        <div className="w-full max-w-4xl flex justify-center mb-8 md:mb-12">
+          <div className="relative w-full h-48 md:h-64">
             <Image
               src="/ouvidoria-qrcode.png"
               alt="Ouvidoria e Denúncia QR Code"
