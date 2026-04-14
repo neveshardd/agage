@@ -5,10 +5,10 @@ export default function AboutSection() {
     <section className="bg-gray-50 py-24 md:py-32 px-4 md:px-0" id="quemsomos">
       <div className="flex flex-col md:flex-row items-center md:items-start gap-10 max-w-6xl mx-auto">
 
-        <div className="w-full md:w-1/2 relative h-[300px] md:h-[500px]">
+        <div className="w-full md:w-1/2 relative h-[300px] md:h-[650px]">
           <Image
-            src="/IMG_0506.JPG"
-            alt="Equipe da Agage engenharia e Montagem Industrial"
+            src="/quem-somos-v2.jpg"
+            alt="Equipe do Grupo Agage em campo"
             fill
             className="object-cover rounded-lg shadow-lg"
             unoptimized
