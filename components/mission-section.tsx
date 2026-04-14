@@ -54,7 +54,7 @@ export default function MissionSection() {
             <p className="text-gray-700 text-start leading-relaxed">
               Ser reconhecida como uma referência de excelência e confiança em engenharia, 
               destacando-se pela qualidade técnica, segurança e pelo compromisso 
-              com o sucesso de nossos clientes e parceiros.
+              e sucesso de nossos clientes e parceiros.
             </p>
           </div>
         </div>
