@@ -54,7 +54,7 @@ export default function MissionSection() {
             <p className="text-gray-700 text-start leading-relaxed">
               Ser reconhecida como uma referência de excelência e confiança em engenharia, 
               destacando-se pela qualidade técnica, segurança e pelo compromisso 
-              inabalável com o sucesso de nossos clientes e parceiros.
+              com o sucesso de nossos clientes e parceiros.
             </p>
           </div>
         </div>
@@ -77,7 +77,7 @@ export default function MissionSection() {
             <ul className="text-gray-700 leading-relaxed text-start list-disc list-inside space-y-1">
               <li><strong>Segurança Absoluta:</strong> Integridade das pessoas acima de tudo.</li>
               <li><strong>Foco em Resultados:</strong> Eficiência total e zero retrabalho.</li>
-              <li><strong>Ética e Compliance:</strong> Rigorosos padrões de integridade.</li>
+              <li><strong>Ética e Compliance:</strong> Atuação pautada pela transparência, integridade e respeito às normas e padrões de conduta.</li>
               <li><strong>Trabalho Colaborativo:</strong> Valorização do capital humano.</li>
               <li><strong>Respeito ao Cliente:</strong> Agilidade e transparência total.</li>
             </ul>
