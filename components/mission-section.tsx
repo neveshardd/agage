@@ -29,7 +29,7 @@ export default function MissionSection() {
               Missão
             </h3>
             <p className="text-gray-700 text-start leading-relaxed">
-              Prover soluções de engenharia e montagem industrial de alta complexidade, 
+              Prover soluções de engenharia de alta complexidade, 
               impulsionando o progresso nacional através de execuções precisas, seguras 
               e pautadas pela excelência técnica.
             </p>
@@ -52,9 +52,9 @@ export default function MissionSection() {
               Visão
             </h3>
             <p className="text-gray-700 text-start leading-relaxed">
-              Ser a principal referência em engenharia do Brasil, 
-              liderando a transformação do setor por meio de tecnologia de ponta, 
-              gestão de alta performance e um legado de confiança inabalável.
+              Ser reconhecida como uma referência de excelência e confiança em engenharia, 
+              destacando-se pela qualidade técnica, segurança e pelo compromisso 
+              inabalável com o sucesso de nossos clientes e parceiros.
             </p>
           </div>
         </div>
