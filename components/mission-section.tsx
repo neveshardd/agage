@@ -52,9 +52,9 @@ export default function MissionSection() {
               Visão
             </h3>
             <p className="text-gray-700 text-start leading-relaxed">
-              Consolidar-se como o parceiro mais confiável do setor de infraestrutura no Brasil, 
-              sendo referência em inovação, gestão moderna e entrega de resultados excepcionais 
-              em cada projeto.
+              Ser a principal referência em engenharia do Brasil, 
+              liderando a transformação do setor por meio de tecnologia de ponta, 
+              gestão de alta performance e um legado de confiança inabalável.
             </p>
           </div>
         </div>
