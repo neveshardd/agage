@@ -14,10 +14,6 @@ export default function MontagemSection() {
         <div className="mb-12 md:mb-16">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
             <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-2 bg-[#1A3767]/5 text-[#1A3767] px-4 py-2 rounded-lg font-bold text-xs uppercase tracking-[0.2em] mb-4 border border-[#1A3767]/10">
-                <span className="w-2 h-2 rounded-full bg-[#F59F26]"></span>
-                Agage Montagem Industrial
-              </div>
               <h2 className="text-4xl md:text-6xl font-black text-[#1A3767] leading-[1.1] tracking-tight">
                 Fornecimento de <br />
                 <span className="text-[#F59F26]">Mão de Obra Especializada</span>
@@ -39,23 +35,14 @@ export default function MontagemSection() {
               <div className="relative">
                 <div className="absolute -left-6 top-0 bottom-0 w-1 bg-[#F59F26] rounded-full hidden md:block"></div>
                 <p className="text-xl md:text-2xl text-gray-700 leading-relaxed font-light">
-                  Nossa equipe altamente qualificada é referência em serviços de <strong className="font-bold text-[#1A3767]">Grande Paralização</strong>, oferecendo soluções completas para indústrias de alta demanda.
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <p className="text-gray-600 leading-relaxed text-sm">
-                  Atuamos com precisão cirúrgica em manutenções corretivas e preventivas. Executamos atividades fundamentais como <strong>caldeiraria, manutenção de fornos, esteiras transportadoras, solda especializada, tanques de armazenamento e silos de sementes</strong>.
-                </p>
-                <p className="text-gray-600 leading-relaxed text-sm">
-                  Nossa expertise garante que cada componente do seu processo receba o cuidado técnico necessário para maximizar a performance e vida útil, reduzindo o tempo de inatividade.
+                  Nossa equipe altamente qualificada é referência em serviços de <strong className="font-bold text-[#1A3767]">Grande Paralização</strong>, oferecendo soluções completas para indústrias de alta demanda, como, caldeiraria, manutenção de fornos, esteiras transportadoras, solda especializada, tanques de armazenamento e silos de sementes.
                 </p>
               </div>
 
               {/* Highlights Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 {[
-                  { label: "Mobilização", desc: "Agilidade em efetivo" },
+                  { label: "Mobilização", desc: "Agilidade em integração em mão de obra e equipamentos" },
                   { label: "Eficiência", desc: "Gestão de tempo" },
                   { label: "Segurança", desc: "Protocolos SSMA" }
                 ].map((item, i) => (

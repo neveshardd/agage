@@ -5,31 +5,28 @@ export default function OuvidoriaSection() {
   return (
     <section className="w-full bg-[#1A3767] py-20 px-6 overflow-hidden" id="ouvidoria">
       <div className="max-w-6xl mx-auto flex flex-col items-center text-center">
+        <h2 className="text-white text-6xl font-semibold mb-10 uppercase">
+          Espaço do colaborador
+        </h2>
         
         {/* QR Code Section */}
         <div className="mb-12">
-          <h2 className="text-white text-4xl font-black mb-10 uppercase tracking-[0.3em]">
-            Canal de Ouvidoria
-          </h2>
           <div className="inline-block relative">
             <Image
               src="/ouvidoria-qrcode.png"
               alt="QR Code Ouvidoria Agage"
-              width={350}
-              height={350}
-              className="object-contain invert grayscale brightness-[1.2] mix-blend-screen"
+              width={600}
+              height={600}
+              className="object-contain"
               unoptimized
             />
           </div>
-          <p className="text-white/40 text-sm mt-8 font-medium uppercase tracking-[0.2em]">
-            Escaneie para uma denúncia segura e anônima
-          </p>
         </div>
 
         {/* Info Cards */}
         <div className="grid md:grid-cols-2 gap-8 w-full max-w-4xl mt-6">
           <div className="flex items-start gap-4 text-start bg-white/5 p-6 rounded-xl border border-white/10">
-            <div className="bg-[#F59F26] p-3 rounded-lg flex-shrink-0">
+            <div className="bg-[#F59F26] p-3 rounded-lg shrink-0">
               <Handshake className="text-white" size={32} />
             </div>
             <div>
@@ -40,7 +37,7 @@ export default function OuvidoriaSection() {
           </div>
 
           <div className="flex items-start gap-4 text-start bg-white/5 p-6 rounded-xl border border-white/10">
-            <div className="bg-[#F59F26] p-3 rounded-lg flex-shrink-0">
+            <div className="bg-[#F59F26] p-3 rounded-lg shrink-0">
               <ShieldCheck className="text-white" size={32} />
             </div>
             <div>
