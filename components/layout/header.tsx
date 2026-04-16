@@ -10,36 +10,43 @@ export default function Header() {
 
   useEffect(() => {
     const heroSection = document.querySelector('#hero')
-    const clientsSection = document.querySelector('#clientes')
+    const hideZoneSections = [
+      document.querySelector('#ouvidoria'),
+      document.querySelector('#contato')
+    ].filter(Boolean) as HTMLElement[]
 
-    const heroObserver = heroSection
-      ? new IntersectionObserver(
-        (entries) => {
-          const entry = entries[0]
-          // Quando o hero sai da tela (menos de 10% visível), ativa o header fixo
-          setScrolled(!entry.isIntersecting)
-        },
-        { threshold: 0.1 }
-      )
-      : null
+    // Rastreador interno para evitar problemas de concorrência no IntersectionObserver
+    const visibilityMap = new Map<HTMLElement, boolean>()
 
-    const clientsObserver = clientsSection
-      ? new IntersectionObserver(
-        (entries) => {
-          const entry = entries[0]
-          // Quando a seção de clientes estiver visível, oculta o header
-          setHideHeader(entry.isIntersecting)
-        },
-        { threshold: 0.2 }
-      )
-      : null
+    const heroObserver = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0]
+        setScrolled(!entry.isIntersecting)
+      },
+      { threshold: 0.1 }
+    )
 
-    if (heroSection && heroObserver) heroObserver.observe(heroSection)
-    if (clientsSection && clientsObserver) clientsObserver.observe(clientsSection)
+    const hideObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          visibilityMap.set(entry.target as HTMLElement, entry.isIntersecting)
+        })
+        
+        // Verifica se qualquer seção da zona de esconder está visível
+        const isAnyVisible = Array.from(visibilityMap.values()).some(v => v)
+        setHideHeader(isAnyVisible)
+      },
+      { threshold: 0 } // No mobile, detecção imediata ao tocar em 1px
+    )
+
+    if (heroSection) heroObserver.observe(heroSection)
+    hideZoneSections.forEach(section => {
+      if (section) hideObserver.observe(section)
+    })
 
     return () => {
-      heroObserver?.disconnect()
-      clientsObserver?.disconnect()
+      heroObserver.disconnect()
+      hideObserver.disconnect()
     }
   }, [])
 
