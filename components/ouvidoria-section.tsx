@@ -20,7 +20,7 @@ export default function OuvidoriaSection() {
           </div>
           
           <h2 className="text-white text-4xl md:text-6xl font-black leading-tight">
-            OUVIDORIA <span className="text-white/30">AGAGE</span>
+            OUVIDORIA <span className="text-[#F59F26]">AGAGE</span>
           </h2>
           
           <p className="text-white/60 text-lg md:text-xl leading-relaxed max-w-2xl font-light">

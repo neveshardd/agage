@@ -5,6 +5,7 @@ export default function MontagemSection() {
     { src: "/OFAS0010.JPEG", alt: "Trabalhador em manutenção industrial" },
     { src: "/BXYW7288.JPEG", alt: "Estrutura industrial metálica" },
     { src: "/HDYD2285.JPG", alt: "Equipe de engenheiros em fábrica" },
+    { src: "/IMG_0506.JPG", alt: "Instalações industriais de grande porte" },
   ]
 
   return (
@@ -98,6 +99,42 @@ export default function MontagemSection() {
                   className="object-cover"
                   unoptimized
                 />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* New Large Featured Image */}
+        <div className="mt-12 md:mt-20">
+          <div className="relative rounded-3xl overflow-hidden h-[400px] md:h-[600px] shadow-2xl group">
+            <Image
+              src={images[3].src}
+              alt={images[3].alt}
+              fill
+              className="object-cover object-center"
+              unoptimized
+            />
+            <div className="absolute inset-0 bg-linear-to-t from-[#1A3767]/50 via-transparent to-transparent"></div>
+            <div className="absolute top-0 bottom-0 left-0 w-2 bg-[#F59F26] hidden md:block"></div>
+
+            <div className="absolute bottom-6 left-6 right-6 md:bottom-10 md:left-10 md:right-10 flex flex-col md:flex-row md:items-end justify-between gap-4 md:gap-6">
+              <div className="max-w-2xl">
+                <h3 className="text-xl md:text-5xl font-black text-white leading-tight uppercase drop-shadow-lg">
+                  Infraestrutura de <br className="hidden md:block" /> Alto Impacto
+                </h3>
+              </div>
+              <div className="bg-[#1A3767]/60 backdrop-blur-md border border-white/10 p-3 md:p-6 rounded-xl md:rounded-2xl max-w-fit md:max-w-none">
+                <div className="flex items-center gap-3 md:gap-4">
+                  <div className="w-8 h-8 md:w-12 md:h-12 bg-[#F59F26] rounded-full flex items-center justify-center shrink-0">
+                    <svg className="w-4 h-4 md:w-6 md:h-6 text-[#1A3767]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-white font-bold text-xs md:text-base">Padrão AGAGE</p>
+                    <p className="text-white/70 text-[10px] md:text-sm">Qualidade sem concessões</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

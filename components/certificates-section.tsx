@@ -21,7 +21,7 @@ export default function CertificatesSection() {
           </h2>
           <div className="w-24 h-1.5 bg-[#F59F26] mt-6 rounded-full"></div>
           <p className="mt-8 text-gray-500 max-w-2xl text-lg md:text-xl font-light">
-            Trabalhamos com os mais altos padrões de segurança, sustentabilidade e eficiência técnica, garantindo resultados excepcionais em cada projeto.
+            Trabalhamos com padrões de segurança, sustentabilidade e eficiência técnica, garantindo resultados excepcionais em cada projeto.
           </p>
         </div>
 

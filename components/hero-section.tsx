@@ -95,10 +95,9 @@ export default function HeroSection() {
           <Image
             src="/agage-colors.png"
             alt="Agage engenharia e Montagem Industrial"
+            priority
             fill
             className="object-contain"
-            priority
-            loading="eager"
             unoptimized
           />
         </div>
