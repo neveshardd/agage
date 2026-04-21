@@ -11,6 +11,7 @@ const items = [
   { title: "Nossos Serviços", url: "#servicos" },
   { title: "Principais Obras e Indústrias", url: "#obras" },
   { title: "Clientes", url: "#clientes" },
+  { title: "Ouvidoria", url: "#ouvidoria" },
   { title: "Contato", url: "#contato" }
 ]
 
@@ -25,18 +26,18 @@ export default function MenuButton() {
         </button>
       </SheetTrigger>
 
-      <SheetContent side="left" className="w-64 bg-[#1A3767] text-black p-6">
+      <SheetContent side="left" className="w-64 md:w-[440px] bg-[#1A3767] text-white p-6 md:p-12 border-r border-white/10">
         <SheetHeader>
           <SheetTitle className="hidden">Menu de Navegação</SheetTitle>
           <SheetDescription className="hidden">Descrição do sheet</SheetDescription>
         </SheetHeader>
 
-        <div className="flex flex-col gap-4 mt-4">
+        <div className="flex flex-col gap-4 mt-6">
           {items.map((item, index) => (
             <a
               key={index}
               href={item.url}
-              className="hover:text-white text-[#F59F26] transition uppercase font-semibold"
+              className="hover:text-white text-[#F59F26] transition-all uppercase font-semibold"
               onClick={() => setOpen(false)}
             >
               {item.title}

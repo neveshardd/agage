@@ -13,7 +13,7 @@ export default function OuvidoriaSection() {
         {/* Superior: Título e Intro */}
         <div className="space-y-6">
           <div className="flex flex-col items-center gap-3">
-            <span className="text-[#F59F26] uppercase tracking-[0.4em] text-xs font-bold">
+            <span className="text-[#F59F26] uppercase tracking-[0.4em] text-lg font-bold">
               Canal de Transparência
             </span>
             <div className="w-12 h-0.5 bg-[#F59F26]"></div>

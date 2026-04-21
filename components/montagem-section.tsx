@@ -16,8 +16,8 @@ export default function MontagemSection() {
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
             <div className="max-w-3xl">
               <h2 className="text-4xl md:text-6xl font-black text-[#1A3767] leading-[1.1] tracking-tight">
-                Fornecimento de <br />
-                <span className="text-[#F59F26]">Mão de Obra Especializada</span>
+                Fornecimento de Mão<br />
+                <span className="text-[#F59F26]">de Obra Especializada</span>
               </h2>
             </div>
             <div className="hidden lg:block w-32 h-px bg-gray-300 transform -translate-y-6"></div>
@@ -36,7 +36,7 @@ export default function MontagemSection() {
               <div className="relative">
                 <div className="absolute -left-6 top-0 bottom-0 w-1 bg-[#F59F26] rounded-full hidden md:block"></div>
                 <p className="text-xl md:text-2xl text-gray-700 leading-relaxed font-light">
-                  Nossa equipe altamente qualificada é referência em serviços de <strong className="font-bold text-[#1A3767]">Grande Paralização</strong>, oferecendo soluções completas para indústrias de alta demanda, como, caldeiraria, manutenção de fornos, esteiras transportadoras, solda especializada, tanques de armazenamento e silos de sementes.
+                  Nossa equipe trabalha com serviços de <strong className="font-bold text-[#1A3767]">Grande Paralização</strong>, oferecendo soluções completas para indústrias de alta demanda, como, caldeiraria, manutenção de fornos, esteiras transportadoras, solda especializada, tanques de armazenamento e silos de sementes.
                 </p>
               </div>
 

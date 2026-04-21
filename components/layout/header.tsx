@@ -76,13 +76,21 @@ export default function Header() {
           />
         </div>
 
-        {/* Botão direito */}
-        <a
-          href="#contato"
-          className={`uppercase font-semibold hover:underline transition-all duration-300 text-sm lg:text-lg ${scrolled ? 'text-[#1a3767] hidden md:block' : 'text-white'}`}
-        >
-          Entrar em contato
-        </a>
+        {/* Botões direitos */}
+        <div className="flex items-center gap-4 md:gap-8">
+          <a
+            href="#ouvidoria"
+            className={`uppercase font-semibold hover:underline transition-all duration-300 text-sm lg:text-lg ${scrolled ? 'text-[#1a3767] hidden md:block' : 'text-white'}`}
+          >
+            Ouvidoria
+          </a>
+          <a
+            href="#contato"
+            className={`uppercase font-semibold hover:underline transition-all duration-300 text-sm lg:text-lg ${scrolled ? 'text-[#1a3767] hidden md:block' : 'text-white'}`}
+          >
+            Entrar em contato
+          </a>
+        </div>
       </div>
     </header>
   )

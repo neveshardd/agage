@@ -195,7 +195,7 @@ export default function FooterSection() {
       {/* RODAPÉ full width; conteúdo interno também limitado a max-w-6xl */}
       <footer className="bg-white text-gray-600 text-center px-4 py-6 border-t border-gray-100">
         <div className="mx-auto px-6 flex flex-col lg:flex-row justify-between items-center gap-2 text-sm">
-          <p>Agage engenharia e Montagem Industrial © 2025 - Todos os direitos reservados.</p>
+          <p>Agage © 2025 - Todos os direitos reservados.</p>
           <p className="hover:text-[#1B3E9F] hover:underline cursor-pointer transition">
             <Link href="https://github.com/neveshardd/agage">
               Desenvolvido por José Eugênio
