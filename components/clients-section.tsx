@@ -28,7 +28,6 @@ export default function ClientsSection() {
     { name: "Andrade Gutierrez", logo: "/client/logo-andrade-reta.png" },
     { name: "Fundação Renova", logo: "/client/logo-fundacao-renova-reta.png" },
     { name: "HTB", logo: "/client/logo-htb-reta.png" },
-    { name: "OAS", logo: "/client/logo-oas-reta.png" },
     { name: "Sacyr", logo: "/client/logo-sacyr-reta.png" },
     { name: "Pan American Energy", logo: "/client/Pan_American_Energy_logo.svg_.png" },
     { name: "Rumo", logo: "/client/logo-rumo-reta.png" },
