@@ -85,6 +85,11 @@ export default function ProjectsSection() {
       client: "VOTORANTIM",
       service: "Execução de Obras Industriais",
     },
+    {
+      title: "PARQUE EÓLICO NOVO HORIZONTE - BA",
+      client: "Pan American Energy / Andrade Gutierrez",
+      service: "Infraestrutura de estrada.",
+    }
 
   ]
 
