@@ -38,6 +38,9 @@ export const en: Dictionary = {
   hero: {
     previous: "Previous slide",
     next: "Next slide",
+    mute: "Mute",
+    unmute: "Unmute",
+    volume: "Volume",
     slides: [
       {
         alt: "Residential resettlement built by AGAGE",

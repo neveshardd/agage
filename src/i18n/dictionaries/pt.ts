@@ -36,6 +36,9 @@ export const pt = {
   hero: {
     previous: "Slide anterior",
     next: "Próximo slide",
+    mute: "Desativar som",
+    unmute: "Ativar som",
+    volume: "Volume",
     slides: [
       {
         alt: "Reassentamento residencial executado pela AGAGE",

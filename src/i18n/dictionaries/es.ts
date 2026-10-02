@@ -38,6 +38,9 @@ export const es: Dictionary = {
   hero: {
     previous: "Diapositiva anterior",
     next: "Diapositiva siguiente",
+    mute: "Silenciar",
+    unmute: "Activar sonido",
+    volume: "Volumen",
     slides: [
       {
         alt: "Reasentamiento residencial ejecutado por AGAGE",

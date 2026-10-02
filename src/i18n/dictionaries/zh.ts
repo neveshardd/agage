@@ -38,6 +38,9 @@ export const zh: Dictionary = {
   hero: {
     previous: "上一张",
     next: "下一张",
+    mute: "静音",
+    unmute: "开启声音",
+    volume: "音量",
     slides: [
       {
         alt: "AGAGE 承建的居民安置项目",

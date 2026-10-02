@@ -4,14 +4,15 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import { type CSSProperties, useState } from "react";
+import { type CSSProperties, useRef, useState } from "react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { localizeHref } from "@/i18n/config";
 import { useI18n } from "@/i18n/I18nProvider";
-import { HERO_SLIDES } from "./data";
+import { HERO_SLIDES, HERO_VIDEO } from "./data";
 import { HeroSlide } from "./HeroSlide";
 import { ChevronIcon } from "./icons/ChevronIcon";
+import { VolumeIcon } from "./icons/VolumeIcon";
 
 export function Hero() {
   const { locale, t } = useI18n();
@@ -19,8 +20,41 @@ export function Hero() {
   const [nextEl, setNextEl] = useState<HTMLButtonElement | null>(null);
   const [paginationEl, setPaginationEl] = useState<HTMLDivElement | null>(null);
 
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+  const [muted, setMuted] = useState(true);
+  const [volume, setVolume] = useState(1);
+
+  // O navegador só libera autoplay com o vídeo mudo; o som é ligado
+  // pelo visitante no controle de som.
+  function applySound(nextMuted: boolean, nextVolume: number) {
+    const video = videoRef.current;
+    if (video) {
+      // Ao ligar o som, o vídeo volta para o início.
+      if (muted && !nextMuted) {
+        video.currentTime = 0;
+        void video.play();
+      }
+      video.volume = nextVolume;
+      video.muted = nextMuted;
+    }
+    setMuted(nextMuted);
+    setVolume(nextVolume);
+  }
+
   return (
-    <section className="relative h-[calc(100dvh-var(--spacing)*20)]">
+    <section className="relative h-[calc(100dvh-var(--spacing)*20)] overflow-hidden bg-slate-900">
+      <video
+        ref={videoRef}
+        src={HERO_VIDEO}
+        autoPlay
+        muted={muted}
+        loop
+        playsInline
+        aria-hidden
+        className="absolute inset-0 h-full w-full object-cover"
+      />
+      <div className="absolute inset-0 bg-slate-900/55" />
+
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         navigation={{ prevEl, nextEl }}
@@ -32,12 +66,10 @@ export function Hero() {
         className="h-full w-full"
       >
         {HERO_SLIDES.map((slide, index) => (
-          <SwiperSlide key={slide.image}>
+          <SwiperSlide key={index}>
             <HeroSlide
-              slide={slide}
               text={t.hero.slides[index]}
               href={localizeHref(locale, slide.ctaHref)}
-              priority={index === 0}
             />
           </SwiperSlide>
         ))}
@@ -60,6 +92,31 @@ export function Hero() {
         >
           <ChevronIcon className="h-6 w-6 rotate-180 sm:h-8 sm:w-8" />
         </button>
+      </div>
+
+      <div className="absolute right-4 bottom-12 z-10 flex items-center gap-2 rounded-full bg-slate-900/60 px-3 py-2 text-white sm:right-6 sm:bottom-5">
+        <button
+          type="button"
+          aria-label={muted ? t.hero.unmute : t.hero.mute}
+          aria-pressed={!muted}
+          onClick={() => applySound(!muted, !muted || volume > 0 ? volume : 1)}
+          className="cursor-pointer text-white/80 transition-colors duration-150 hover:text-white"
+        >
+          <VolumeIcon muted={muted} className="h-5 w-5" />
+        </button>
+        <input
+          type="range"
+          min={0}
+          max={1}
+          step={0.05}
+          value={muted ? 0 : volume}
+          aria-label={t.hero.volume}
+          onChange={(event) => {
+            const next = Number(event.target.value);
+            applySound(next === 0, next);
+          }}
+          className="h-1 w-20 cursor-pointer accent-white sm:w-24"
+        />
       </div>
 
       <div
