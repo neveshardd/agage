@@ -90,7 +90,7 @@ export const en: Dictionary = {
   about: {
     imageAlt: "AGAGE Group team on site",
     title: "About us",
-    text: "The AGAGE Group works in civil construction and industrial assembly and, since 2019, has stood out for its participation in major contracts across Brazil. Its work is guided by modern management, aligned with market best practices and strict compliance standards.",
+    text: "The AGAGE Group works in civil construction and industrial assembly and, since 2019, has stood out for its participation in major contracts across Brazil. Its work is guided by modern management, aligned with market best practices and strict compliance and safety standards.",
   },
   clients: {
     title: "Our clients",
@@ -111,7 +111,7 @@ export const en: Dictionary = {
   coverage: {
     title: "Where we operate",
     paragraphs: [
-      "Headquartered in the Federal District and present in several states, such as Goiás, Minas Gerais, Mato Grosso, Bahia and Rio de Janeiro, the AGAGE Group is ready to operate anywhere in Brazil.",
+      "Headquartered in the Federal District, we have already worked in several states, such as Goiás, Minas Gerais, Mato Grosso, Bahia and Rio de Janeiro. The AGAGE Group is ready to operate anywhere in Brazil.",
       "Flexibility is one of our pillars: we deliver small, medium and large projects with the same level of efficiency, quality and responsibility.",
     ],
     cta: "View projects",
@@ -224,9 +224,9 @@ export const en: Dictionary = {
         "Industrial, commercial and residential buildings, from foundations to finishing.",
     },
     pavimentacao: {
-      title: "Paving",
+      title: "Paving & road maintenance",
       description:
-        "Asphalt and concrete paving for urban streets, highways, yards and airports.",
+        "Asphalt and concrete paving for urban streets, highways, yards and airports. Routine highway maintenance: pavement repair, vegetation control, drainage cleaning and signage.",
     },
     escavacao: {
       title: "Excavation",
@@ -253,10 +253,10 @@ export const en: Dictionary = {
       description:
         "Retaining walls, anchored walls and solutions for slope and hillside stabilization.",
     },
-    "conserva-de-estradas": {
-      title: "Road maintenance",
+    "fornecimento-de-mao-de-obra": {
+      title: "Civil and mechanical workforce supply",
       description:
-        "Routine highway maintenance: pavement repair, vegetation control, drainage cleaning and signage.",
+        "Supply of civil and mechanical workforce to support industrial shutdowns.",
     },
     "obras-de-drenagem": {
       title: "Drainage works",

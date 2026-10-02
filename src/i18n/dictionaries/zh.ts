@@ -86,7 +86,7 @@ export const zh: Dictionary = {
   about: {
     imageAlt: "AGAGE 集团团队在现场",
     title: "关于我们",
-    text: "AGAGE 集团专注于土木建筑与工业安装领域，自 2019 年以来参与了巴西各地多项重要合同。公司秉持现代化管理理念，遵循市场最佳实践和严格的合规标准。",
+    text: "AGAGE 集团专注于土木建筑与工业安装领域，自 2019 年以来参与了巴西各地多项重要合同。公司秉持现代化管理理念，遵循市场最佳实践和严格的合规与安全标准。",
   },
   clients: {
     title: "我们的客户",
@@ -107,7 +107,7 @@ export const zh: Dictionary = {
   coverage: {
     title: "业务区域",
     paragraphs: [
-      "AGAGE 集团总部位于巴西联邦区，业务遍及戈亚斯州、米纳斯吉拉斯州、马托格罗索州、巴伊亚州和里约热内卢州等多个州，具备在巴西全境开展业务的能力。",
+      "我们总部位于巴西联邦区，已在戈亚斯州、米纳斯吉拉斯州、马托格罗索州、巴伊亚州和里约热内卢州等多个州开展业务。AGAGE 集团具备在巴西全境开展业务的能力。",
       "灵活性是我们的核心支柱之一：无论小型、中型还是大型工程，我们都以同等的效率、质量和责任感完成。",
     ],
     cta: "查看工程",
@@ -212,8 +212,9 @@ export const zh: Dictionary = {
       description: "工业、商业及住宅建筑，从基础施工到装饰装修。",
     },
     pavimentacao: {
-      title: "路面铺设",
-      description: "城市道路、公路、堆场及机场的沥青和混凝土路面铺设。",
+      title: "路面铺设与道路养护",
+      description:
+        "城市道路、公路、堆场及机场的沥青和混凝土路面铺设。公路日常养护：路面修补、除草、排水清理及交通标志。",
     },
     escavacao: {
       title: "土方开挖",
@@ -235,9 +236,9 @@ export const zh: Dictionary = {
       title: "支挡工程",
       description: "挡土墙、支护结构及边坡与山体加固方案。",
     },
-    "conserva-de-estradas": {
-      title: "道路养护",
-      description: "公路日常养护：路面修补、除草、排水清理及交通标志。",
+    "fornecimento-de-mao-de-obra": {
+      title: "土建与机械人员派遣",
+      description: "为工业停机检修提供土建与机械专业人员。",
     },
     "obras-de-drenagem": {
       title: "排水工程",

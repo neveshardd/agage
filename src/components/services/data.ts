@@ -1,8 +1,8 @@
 import { BridgeIcon } from "./icons/BridgeIcon";
 import { BuildingIcon } from "./icons/BuildingIcon";
-import { ConeIcon } from "./icons/ConeIcon";
 import { DropletIcon } from "./icons/DropletIcon";
 import { FactoryIcon } from "./icons/FactoryIcon";
+import { HardHatIcon } from "./icons/HardHatIcon";
 import { PillarsIcon } from "./icons/PillarsIcon";
 import { RoadIcon } from "./icons/RoadIcon";
 import { ShovelIcon } from "./icons/ShovelIcon";
@@ -22,7 +22,7 @@ export const SERVICES: ServiceData[] = [
   { slug: "terraplenagem", icon: TerrainIcon, accent: "orange" },
   { slug: "obras-de-infraestrutura", icon: PillarsIcon, accent: "blue" },
   { slug: "obras-de-contencao", icon: WallIcon, accent: "orange" },
-  { slug: "conserva-de-estradas", icon: ConeIcon, accent: "blue" },
+  { slug: "fornecimento-de-mao-de-obra", icon: HardHatIcon, accent: "blue" },
   { slug: "obras-de-drenagem", icon: WavesIcon, accent: "orange" },
   { slug: "obras-industriais", icon: FactoryIcon, accent: "blue" },
   { slug: "obras-de-artes-especiais", icon: BridgeIcon, accent: "orange" },

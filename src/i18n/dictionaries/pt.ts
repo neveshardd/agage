@@ -88,7 +88,7 @@ export const pt = {
   about: {
     imageAlt: "Equipe do Grupo AGAGE em campo",
     title: "Quem somos",
-    text: "O Grupo AGAGE atua nos segmentos de construção civil e montagem industrial, destacando-se desde 2019 pela participação em contratos relevantes em todo o país. Sua atuação é pautada por uma gestão moderna, alinhada às melhores práticas de mercado e rigorosos padrões de compliance.",
+    text: "O Grupo AGAGE atua nos segmentos de construção civil e montagem industrial, destacando-se desde 2019 pela participação em contratos relevantes em todo o país. Sua atuação é pautada por uma gestão moderna, alinhada às melhores práticas de mercado e rigorosos padrões de compliance e segurança.",
   },
   clients: {
     title: "Nossos clientes",
@@ -109,7 +109,7 @@ export const pt = {
   coverage: {
     title: "Locais em que atuamos",
     paragraphs: [
-      "Com sede no Distrito Federal e presença em diversos estados, como Goiás, Minas Gerais, Mato Grosso, Bahia e Rio de Janeiro, o Grupo AGAGE está preparado para atuar em todo o território nacional.",
+      "Com sede no Distrito Federal, já atuamos em diversos estados, como Goiás, Minas Gerais, Mato Grosso, Bahia e Rio de Janeiro. O Grupo AGAGE está preparado para atuar em todo o território nacional.",
       "A flexibilidade é um dos nossos pilares: executamos obras de pequeno, médio e grande porte com o mesmo nível de eficiência, qualidade e responsabilidade.",
     ],
     cta: "Ver obras",
@@ -223,9 +223,9 @@ export const pt = {
         "Edificações industriais, comerciais e residenciais, das fundações ao acabamento.",
     },
     pavimentacao: {
-      title: "Pavimentação",
+      title: "Pavimentação & conserva de estradas",
       description:
-        "Pavimentação asfáltica e em concreto para vias urbanas, rodovias, pátios e aeroportos.",
+        "Pavimentação asfáltica e em concreto para vias urbanas, rodovias, pátios e aeroportos. Manutenção rotineira de rodovias: recomposição do pavimento, roçada, limpeza da drenagem e sinalização.",
     },
     escavacao: {
       title: "Escavação",
@@ -252,10 +252,10 @@ export const pt = {
       description:
         "Muros de arrimo, cortinas e soluções para estabilização de taludes e encostas.",
     },
-    "conserva-de-estradas": {
-      title: "Conserva de estradas",
+    "fornecimento-de-mao-de-obra": {
+      title: "Fornecimento de mão de obra civil e mecânica",
       description:
-        "Manutenção rotineira de rodovias: recomposição do pavimento, roçada, limpeza da drenagem e sinalização.",
+        "Fornecimento de mão de obra civil e mecânica para atendimento de paradas industriais.",
     },
     "obras-de-drenagem": {
       title: "Obras de drenagem",

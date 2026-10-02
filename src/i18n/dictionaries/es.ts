@@ -90,7 +90,7 @@ export const es: Dictionary = {
   about: {
     imageAlt: "Equipo del Grupo AGAGE en campo",
     title: "Quiénes somos",
-    text: "El Grupo AGAGE actúa en los segmentos de construcción civil y montaje industrial y, desde 2019, se destaca por su participación en contratos relevantes en todo Brasil. Su actuación se basa en una gestión moderna, alineada con las mejores prácticas del mercado y rigurosos estándares de compliance.",
+    text: "El Grupo AGAGE actúa en los segmentos de construcción civil y montaje industrial y, desde 2019, se destaca por su participación en contratos relevantes en todo Brasil. Su actuación se basa en una gestión moderna, alineada con las mejores prácticas del mercado y rigurosos estándares de compliance y seguridad.",
   },
   clients: {
     title: "Nuestros clientes",
@@ -111,7 +111,7 @@ export const es: Dictionary = {
   coverage: {
     title: "Dónde actuamos",
     paragraphs: [
-      "Con sede en el Distrito Federal y presencia en diversos estados, como Goiás, Minas Gerais, Mato Grosso, Bahía y Río de Janeiro, el Grupo AGAGE está preparado para actuar en todo el territorio brasileño.",
+      "Con sede en el Distrito Federal, ya hemos actuado en diversos estados, como Goiás, Minas Gerais, Mato Grosso, Bahía y Río de Janeiro. El Grupo AGAGE está preparado para actuar en todo el territorio brasileño.",
       "La flexibilidad es uno de nuestros pilares: ejecutamos obras de pequeña, mediana y gran escala con el mismo nivel de eficiencia, calidad y responsabilidad.",
     ],
     cta: "Ver obras",
@@ -225,9 +225,9 @@ export const es: Dictionary = {
         "Edificaciones industriales, comerciales y residenciales, desde las fundaciones hasta las terminaciones.",
     },
     pavimentacao: {
-      title: "Pavimentación",
+      title: "Pavimentación y conservación de carreteras",
       description:
-        "Pavimentación asfáltica y de hormigón para vías urbanas, carreteras, patios y aeropuertos.",
+        "Pavimentación asfáltica y de hormigón para vías urbanas, carreteras, patios y aeropuertos. Mantenimiento rutinario de carreteras: reparación del pavimento, desbroce, limpieza del drenaje y señalización.",
     },
     escavacao: {
       title: "Excavación",
@@ -254,10 +254,10 @@ export const es: Dictionary = {
       description:
         "Muros de contención, pantallas y soluciones para la estabilización de taludes y laderas.",
     },
-    "conserva-de-estradas": {
-      title: "Conservación de carreteras",
+    "fornecimento-de-mao-de-obra": {
+      title: "Suministro de mano de obra civil y mecánica",
       description:
-        "Mantenimiento rutinario de carreteras: reparación del pavimento, desbroce, limpieza del drenaje y señalización.",
+        "Suministro de mano de obra civil y mecánica para la atención de paradas industriales.",
     },
     "obras-de-drenagem": {
       title: "Obras de drenaje",
