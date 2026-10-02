@@ -56,7 +56,7 @@ export const COVERAGE_LOCATIONS: LocationMarker[] = [
     project: {
       id: "pavimentacao-anapolis",
       client: "Prefeitura de Anápolis",
-      image: "/equipe-talude.jpg",
+      image: "/pavimentacao-anapolis.jpg",
     },
   },
   {
@@ -76,7 +76,7 @@ export const COVERAGE_LOCATIONS: LocationMarker[] = [
     project: {
       id: "fabrica-de-cimentos",
       client: "Votorantim",
-      image: "/votorantim.jpeg",
+      image: "/fabrica-de-cimentos.jpg",
     },
   },
   {
