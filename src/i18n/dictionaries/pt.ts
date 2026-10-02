@@ -120,6 +120,8 @@ export const pt = {
     previous: "Obra anterior",
     next: "Próxima obra",
     viewLarger: "Ver foto em resolução maior",
+    client: "Cliente",
+    service: "Serviço",
   },
   projects: {
     "parque-eolico-novo-horizonte": {

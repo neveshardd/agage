@@ -122,6 +122,8 @@ export const en: Dictionary = {
     previous: "Previous project",
     next: "Next project",
     viewLarger: "View larger photo",
+    client: "Client",
+    service: "Service",
   },
   projects: {
     "parque-eolico-novo-horizonte": {

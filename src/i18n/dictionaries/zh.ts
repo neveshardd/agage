@@ -118,6 +118,8 @@ export const zh: Dictionary = {
     previous: "上一个工程",
     next: "下一个工程",
     viewLarger: "查看大图",
+    client: "客户",
+    service: "服务",
   },
   projects: {
     "parque-eolico-novo-horizonte": {

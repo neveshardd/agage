@@ -9,7 +9,7 @@ import { PinIcon } from "./icons/PinIcon";
 
 export function ProjectCard({ location }: { location: LocationMarker }) {
   const { t } = useI18n();
-  const title = t.projects[location.project.id].title;
+  const { title, description } = t.projects[location.project.id];
 
   return (
     <div className="overflow-hidden rounded-lg border border-slate-200 bg-white">
@@ -54,8 +54,17 @@ export function ProjectCard({ location }: { location: LocationMarker }) {
 
       <div className="p-5">
         <h3 className="font-bold text-brand-navy">{title}</h3>
-        <p className="mt-1 text-sm font-semibold text-brand-blue">
+        <p className="mt-1 text-sm text-slate-600">
+          <span className="font-semibold text-brand-blue">
+            {t.gallery.client}:
+          </span>{" "}
           {location.project.client}
+        </p>
+        <p className="mt-1 text-sm text-slate-600">
+          <span className="font-semibold text-brand-blue">
+            {t.gallery.service}:
+          </span>{" "}
+          {description}
         </p>
         <p className="mt-1.5 flex items-center gap-1.5 text-sm text-slate-500">
           <PinIcon className="h-3.5 w-3.5 shrink-0 text-brand-orange" />
