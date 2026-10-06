@@ -29,7 +29,10 @@ export default async function MissionVisionValuesPage() {
 
       <section className="mx-auto w-full max-w-7xl px-6 py-16 sm:py-20 lg:px-10">
         <div className="grid gap-8 lg:grid-cols-2">
-          <article className="border-t-4 border-brand-orange bg-slate-50 p-8 sm:p-10">
+          <article
+            data-reveal
+            className="border-t-4 border-brand-orange bg-slate-50 p-8 sm:p-10"
+          >
             <h2 className="text-sm font-bold tracking-wide text-brand-orange uppercase">
               {t.mvv.mission}
             </h2>
@@ -38,7 +41,10 @@ export default async function MissionVisionValuesPage() {
             </p>
           </article>
 
-          <article className="border-t-4 border-brand-blue bg-slate-50 p-8 sm:p-10">
+          <article
+            data-reveal
+            className="border-t-4 border-brand-blue bg-slate-50 p-8 sm:p-10"
+          >
             <h2 className="text-sm font-bold tracking-wide text-brand-blue uppercase">
               {t.mvv.vision}
             </h2>
@@ -50,7 +56,7 @@ export default async function MissionVisionValuesPage() {
       </section>
 
       <section className="bg-brand-navy py-16 text-white sm:py-20">
-        <div className="mx-auto max-w-7xl px-6 lg:px-10">
+        <div data-reveal className="mx-auto max-w-7xl px-6 lg:px-10">
           <h2 className="text-2xl font-bold sm:text-3xl">
             {t.mvv.valuesTitle}
           </h2>

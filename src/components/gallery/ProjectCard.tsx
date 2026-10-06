@@ -16,21 +16,20 @@ export function ProjectCard({ location }: { location: LocationMarker }) {
       <Dialog.Root>
         <Dialog.Trigger
           aria-label={`${t.gallery.viewLarger}: ${title}`}
-          className="relative block h-56 w-full cursor-pointer overflow-hidden border-0 bg-transparent p-0"
+          className="group relative block h-56 w-full cursor-pointer overflow-hidden border-0 bg-transparent p-0"
         >
           <Image
             src={location.project.image}
             alt={title}
             fill
-            unoptimized
-            sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-            className="object-cover"
+            sizes="(min-width: 1280px) 290px, (min-width: 1024px) 25vw, (min-width: 640px) 45vw, 87vw"
+            className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
           />
         </Dialog.Trigger>
 
         <Dialog.Portal>
-          <Dialog.Backdrop className="fixed inset-0 z-40 bg-slate-900/70" />
-          <Dialog.Popup className="fixed top-1/2 left-1/2 z-50 w-[calc(100%-2rem)] max-w-4xl -translate-x-1/2 -translate-y-1/2 outline-none">
+          <Dialog.Backdrop className="fixed inset-0 z-40 bg-slate-900/70 transition-opacity duration-200 data-ending-style:opacity-0 data-starting-style:opacity-0" />
+          <Dialog.Popup className="fixed top-1/2 left-1/2 z-50 w-[calc(100%-2rem)] max-w-4xl -translate-x-1/2 -translate-y-1/2 outline-none transition-[opacity,scale] duration-200 ease-out data-ending-style:scale-[0.98] data-ending-style:opacity-0 data-starting-style:scale-[0.98] data-starting-style:opacity-0">
             <div className="relative aspect-4/3 w-full overflow-hidden rounded-lg">
               <Image
                 src={location.project.image}

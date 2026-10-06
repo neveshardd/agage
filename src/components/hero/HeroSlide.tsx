@@ -21,10 +21,10 @@ export function HeroSlide({
       </p>
       <Link
         href={href}
-        className="mt-1 inline-flex items-center gap-2 rounded-sm bg-brand-orange px-5 py-2.5 text-xs font-bold tracking-wide text-white uppercase transition-colors duration-150 hover:bg-brand-orange-dark sm:px-6 sm:py-3 sm:text-sm"
+        className="group mt-1 inline-flex items-center gap-2 rounded-sm bg-brand-orange px-5 py-2.5 text-xs font-bold tracking-wide text-white uppercase transition-colors duration-150 hover:bg-brand-orange-dark sm:px-6 sm:py-3 sm:text-sm"
       >
         {text.cta}
-        <ArrowRightIcon className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+        <ArrowRightIcon className="h-3.5 w-3.5 transition-transform duration-200 ease-out group-hover:translate-x-0.5 sm:h-4 sm:w-4" />
       </Link>
     </div>
   );

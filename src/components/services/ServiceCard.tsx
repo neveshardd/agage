@@ -17,7 +17,10 @@ export function ServiceCard({
   const Icon = service.icon;
 
   return (
-    <div className="flex h-full flex-col gap-3 border border-brand-blue p-6">
+    <div
+      data-reveal
+      className="flex h-full flex-col gap-3 border border-brand-blue p-6 transition-colors duration-300 hover:bg-slate-50"
+    >
       <div className="flex items-center gap-3">
         <Icon
           className={`h-7 w-7 shrink-0 ${ICON_ACCENT_STYLES[service.accent]}`}

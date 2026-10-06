@@ -20,7 +20,7 @@ export async function CTA() {
       <div className="absolute inset-0 bg-linear-to-l from-brand-orange/75 via-brand-orange/85 to-brand-orange-dark/95 sm:from-brand-orange/15 sm:via-brand-orange/75 sm:to-brand-orange-dark/95" />
 
       <div className="relative z-10 mx-auto flex h-full max-w-7xl items-center px-6 lg:px-10">
-        <div className="max-w-xl text-white sm:mr-auto">
+        <div data-reveal className="max-w-xl text-white sm:mr-auto">
           <h2 className="text-xl font-bold text-balance sm:text-2xl lg:text-3xl">
             {t.cta.title}
           </h2>

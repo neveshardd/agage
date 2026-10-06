@@ -67,6 +67,7 @@ export default async function RootLayout({ children }: LayoutProps<"/[lang]">) {
   return (
     <html
       lang={HTML_LANG[locale]}
+      data-scroll-behavior="smooth"
       className={`${figtree.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">

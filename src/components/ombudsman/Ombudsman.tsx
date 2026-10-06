@@ -19,7 +19,7 @@ export async function Ombudsman() {
       <div className="absolute inset-0 bg-linear-to-r from-brand-orange/75 via-brand-orange/85 to-brand-orange-dark/95 sm:from-brand-orange/15 sm:via-brand-orange/75 sm:to-brand-orange-dark/95" />
 
       <div className="relative z-10 mx-auto flex h-full max-w-7xl items-center justify-between px-6 lg:px-10">
-        <div className="flex flex-col items-start gap-4">
+        <div data-reveal className="flex flex-col items-start gap-4">
           <div className="relative h-10 w-24 sm:h-12 sm:w-28">
             <Image
               src="/ouvidoria.png"
@@ -47,7 +47,7 @@ export async function Ombudsman() {
           </a>
         </div>
 
-        <div className="max-w-md text-right text-white">
+        <div data-reveal className="max-w-md text-right text-white">
           <h2 className="text-2xl font-bold text-balance sm:text-3xl">
             {t.ombudsman.title}
           </h2>

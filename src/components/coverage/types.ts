@@ -15,3 +15,8 @@ export interface LocationMarker {
   coordinates: [number, number];
   project: LocationProject;
 }
+
+/** Marcador com a posição já projetada no viewBox do mapa ([x, y]). */
+export interface ProjectedLocationMarker extends LocationMarker {
+  point: [number, number];
+}

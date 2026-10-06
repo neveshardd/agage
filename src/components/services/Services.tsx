@@ -10,7 +10,10 @@ export async function Services() {
       id="servicos"
       className="mx-auto w-full max-w-7xl px-6 py-24 sm:py-32 lg:px-10"
     >
-      <h2 className="mx-auto max-w-3xl text-center text-2xl font-bold text-balance text-brand-navy sm:text-3xl lg:text-4xl">
+      <h2
+        data-reveal
+        className="mx-auto max-w-3xl text-center text-2xl font-bold text-balance text-brand-navy sm:text-3xl lg:text-4xl"
+      >
         {t.servicesSection.title}
       </h2>
 

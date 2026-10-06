@@ -2,53 +2,23 @@
 
 import { Dialog } from "@base-ui/react/dialog";
 import Image from "next/image";
-import { type ComponentProps, useLayoutEffect, useRef, useState } from "react";
-import {
-  ComposableMap,
-  Geographies,
-  Geography,
-  useMapContext,
-} from "react-simple-maps";
+import { useState } from "react";
 import { useI18n } from "@/i18n/I18nProvider";
-import { BRAZIL_STATES_GEO_URL, COVERAGE_LOCATIONS } from "./data";
-import type { LocationMarker as LocationMarkerData } from "./types";
+import { BRAZIL_MAP_SRC, VIEWBOX_HEIGHT, VIEWBOX_WIDTH } from "./data";
+import type { ProjectedLocationMarker } from "./types";
 
-const VIEWBOX_WIDTH = 800;
-const VIEWBOX_HEIGHT = 650;
-
-function locationKey(location: LocationMarkerData) {
+function locationKey(location: ProjectedLocationMarker) {
   return `${location.state}-${location.city}`;
 }
 
-// Arredonda a posição projetada para que o servidor (Node) e o navegador
-// gerem exatamente o mesmo `transform`. Sem isso, diferenças na última casa
-// decimal do cálculo de ponto flutuante causam erro de hidratação.
-function useProjectedPoint(coordinates: [number, number]) {
-  const { projection } = useMapContext();
-  const point = projection(coordinates);
-  if (!point) return null;
-  return point.map((value) => Math.round(value * 100) / 100) as [
-    number,
-    number,
-  ];
-}
-
-function MapMarker({
-  coordinates,
-  ...props
-}: { coordinates: [number, number] } & ComponentProps<"g">) {
-  const point = useProjectedPoint(coordinates);
-  if (!point) return null;
-  const [x, y] = point;
-
-  return <g transform={`translate(${x}, ${y})`} {...props} />;
-}
-
-function HoveredTooltip({ location }: { location: LocationMarkerData | null }) {
+function HoveredTooltip({
+  location,
+}: {
+  location: ProjectedLocationMarker | null;
+}) {
   const { t } = useI18n();
-  const point = useProjectedPoint(location?.coordinates ?? [0, 0]);
-  if (!location || !point) return null;
-  const [x, y] = point;
+  if (!location) return null;
+  const [x, y] = location.point;
 
   return (
     <g transform={`translate(${x}, ${y})`} className="pointer-events-none">
@@ -66,97 +36,90 @@ function HoveredTooltip({ location }: { location: LocationMarkerData | null }) {
   );
 }
 
-export function BrazilMap() {
+// Os estados chegam como um SVG estático (gerado no build) e os marcadores já
+// vêm projetados do servidor; aqui fica só a interação.
+export function BrazilMap({
+  locations,
+}: {
+  locations: ProjectedLocationMarker[];
+}) {
   const { t } = useI18n();
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [height, setHeight] = useState(0);
-  const [selected, setSelected] = useState<LocationMarkerData | null>(null);
+  // `selected` é mantido depois de fechar para o conteúdo continuar visível
+  // durante a animação de saída do modal.
+  const [selected, setSelected] = useState<ProjectedLocationMarker | null>(
+    null,
+  );
+  const [open, setOpen] = useState(false);
   const [hoveredKey, setHoveredKey] = useState<string | null>(null);
 
-  useLayoutEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
-
-    setHeight(container.getBoundingClientRect().height);
-
-    const observer = new ResizeObserver(([entry]) => {
-      if (entry) setHeight(entry.contentRect.height);
-    });
-    observer.observe(container);
-    return () => observer.disconnect();
-  }, []);
-
-  const width = height * (VIEWBOX_WIDTH / VIEWBOX_HEIGHT);
   const hoveredLocation =
-    COVERAGE_LOCATIONS.find(
-      (location) => locationKey(location) === hoveredKey,
-    ) ?? null;
+    locations.find((location) => locationKey(location) === hoveredKey) ?? null;
+
+  function select(location: ProjectedLocationMarker) {
+    setSelected(location);
+    setOpen(true);
+  }
 
   return (
     <>
-      <div ref={containerRef} className="h-full">
-        <ComposableMap
-          projection="geoMercator"
-          projectionConfig={{ center: [-66, -14], scale: 700 }}
-          width={VIEWBOX_WIDTH}
-          height={VIEWBOX_HEIGHT}
-          preserveAspectRatio="xMaxYMid meet"
-          className="overflow-visible"
-          style={height > 0 ? { width, height, display: "block" } : undefined}
-        >
-          <Geographies geography={BRAZIL_STATES_GEO_URL}>
-            {({ geographies }) =>
-              geographies.map((geo) => (
-                <Geography
-                  key={geo.rsmKey}
-                  geography={geo}
-                  className="fill-brand-orange stroke-white stroke-[0.75px] outline-none"
-                />
-              ))
-            }
-          </Geographies>
+      <div
+        className="relative h-full"
+        style={{ aspectRatio: `${VIEWBOX_WIDTH} / ${VIEWBOX_HEIGHT}` }}
+      >
+        <Image
+          src={BRAZIL_MAP_SRC}
+          alt=""
+          fill
+          unoptimized
+          className="object-contain"
+        />
 
-          {COVERAGE_LOCATIONS.map((location) => (
-            <MapMarker
-              key={locationKey(location)}
-              coordinates={location.coordinates}
-              onClick={() => setSelected(location)}
-              onMouseEnter={() => setHoveredKey(locationKey(location))}
-              onMouseLeave={() => setHoveredKey(null)}
-              onFocus={() => setHoveredKey(locationKey(location))}
-              onBlur={() => setHoveredKey(null)}
-              onKeyDown={(event) => {
-                if (event.key === "Enter" || event.key === " ") {
-                  event.preventDefault();
-                  setSelected(location);
-                }
-              }}
-              role="button"
-              tabIndex={0}
-              aria-label={`${t.coverage.viewDetails}: ${t.projects[location.project.id].title}`}
-              className="cursor-pointer outline-none"
-            >
-              <circle
-                r={13}
-                className="fill-white stroke-brand-blue stroke-[3px] transition-transform duration-150 hover:scale-110"
-              />
-              <circle r={5.5} className="fill-brand-blue" />
-            </MapMarker>
-          ))}
+        {/* biome-ignore lint/a11y/noSvgWithoutTitle: camada de marcadores; cada um tem o próprio aria-label, e um <title> viraria tooltip nativo sobre o mapa. */}
+        <svg
+          viewBox={`0 0 ${VIEWBOX_WIDTH} ${VIEWBOX_HEIGHT}`}
+          className="absolute inset-0 h-full w-full overflow-visible"
+        >
+          {locations.map((location) => {
+            const [x, y] = location.point;
+
+            return (
+              // biome-ignore lint/a11y/useSemanticElements: marcador dentro de um SVG, onde não há <button>.
+              <g
+                key={locationKey(location)}
+                transform={`translate(${x}, ${y})`}
+                onClick={() => select(location)}
+                onMouseEnter={() => setHoveredKey(locationKey(location))}
+                onMouseLeave={() => setHoveredKey(null)}
+                onFocus={() => setHoveredKey(locationKey(location))}
+                onBlur={() => setHoveredKey(null)}
+                onKeyDown={(event) => {
+                  if (event.key === "Enter" || event.key === " ") {
+                    event.preventDefault();
+                    select(location);
+                  }
+                }}
+                role="button"
+                tabIndex={0}
+                aria-label={`${t.coverage.viewDetails}: ${t.projects[location.project.id].title}`}
+                className="cursor-pointer outline-none"
+              >
+                <circle
+                  r={13}
+                  className="fill-white stroke-brand-blue stroke-[3px] transition-transform duration-150 hover:scale-110"
+                />
+                <circle r={5.5} className="fill-brand-blue" />
+              </g>
+            );
+          })}
 
           <HoveredTooltip location={hoveredLocation} />
-        </ComposableMap>
+        </svg>
       </div>
 
-      <Dialog.Root
-        open={selected !== null}
-        onOpenChange={(open) => {
-          if (!open) setSelected(null);
-        }}
-      >
+      <Dialog.Root open={open} onOpenChange={setOpen}>
         <Dialog.Portal>
-          <Dialog.Backdrop className="fixed inset-0 z-40 bg-slate-900/50" />
-          <Dialog.Popup className="fixed top-1/2 left-1/2 z-50 w-[calc(100%-2rem)] max-w-md -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-lg bg-white outline-none">
+          <Dialog.Backdrop className="fixed inset-0 z-40 bg-slate-900/50 transition-opacity duration-200 data-ending-style:opacity-0 data-starting-style:opacity-0" />
+          <Dialog.Popup className="fixed top-1/2 left-1/2 z-50 w-[calc(100%-2rem)] max-w-md -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-lg bg-white outline-none transition-[opacity,scale] duration-200 ease-out data-ending-style:scale-[0.98] data-ending-style:opacity-0 data-starting-style:scale-[0.98] data-starting-style:opacity-0">
             {selected && (
               <>
                 <div className="relative h-48 w-full">
@@ -164,6 +127,7 @@ export function BrazilMap() {
                     src={selected.project.image}
                     alt={t.projects[selected.project.id].title}
                     fill
+                    sizes="(min-width: 480px) 448px, 100vw"
                     className="object-cover"
                   />
                 </div>

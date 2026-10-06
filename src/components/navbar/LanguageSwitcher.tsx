@@ -53,7 +53,7 @@ export function LanguageSwitcher() {
           align="end"
           sideOffset={8}
         >
-          <Combobox.Popup className="rounded-md w-45 border border-slate-200 bg-white px-1.5 py-1 shadow-xl shadow-slate-900/10 outline-none">
+          <Combobox.Popup className="rounded-md w-45 border border-slate-200 bg-white px-1.5 py-1 shadow-xl shadow-slate-900/10 outline-none transition-[opacity,translate] duration-200 ease-out data-ending-style:-translate-y-1 data-ending-style:opacity-0 data-starting-style:-translate-y-1 data-starting-style:opacity-0">
             <Combobox.List>
               {LANGUAGE_OPTIONS.map((option) => (
                 <Combobox.Item

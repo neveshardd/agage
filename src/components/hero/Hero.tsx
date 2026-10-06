@@ -4,12 +4,13 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import { type CSSProperties, useRef, useState } from "react";
+import Image from "next/image";
+import { type CSSProperties, useEffect, useRef, useState } from "react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { localizeHref } from "@/i18n/config";
 import { useI18n } from "@/i18n/I18nProvider";
-import { HERO_SLIDES, HERO_VIDEO } from "./data";
+import { HERO_POSTER, HERO_SLIDES, HERO_VIDEO } from "./data";
 import { HeroSlide } from "./HeroSlide";
 import { ChevronIcon } from "./icons/ChevronIcon";
 import { VolumeIcon } from "./icons/VolumeIcon";
@@ -20,9 +21,44 @@ export function Hero() {
   const [nextEl, setNextEl] = useState<HTMLButtonElement | null>(null);
   const [paginationEl, setPaginationEl] = useState<HTMLDivElement | null>(null);
 
+  const posterRef = useRef<HTMLImageElement | null>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [muted, setMuted] = useState(true);
   const [volume, setVolume] = useState(1);
+
+  // O vídeo (quase 12 MB) só começa a ser baixado depois que a página está
+  // interativa e o pôster — o primeiro quadro do próprio vídeo — já apareceu,
+  // para não disputar banda com o que é crítico para a primeira pintura. Fora
+  // da tela ele é pausado, deixando a rolagem do restante da página livre — a
+  // menos que o visitante tenha ligado o som.
+  useEffect(() => {
+    const video = videoRef.current;
+    const poster = posterRef.current;
+    if (!video) return;
+
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        // A promessa é rejeitada se um pause() chegar antes do início.
+        video.play().catch(() => {});
+      } else if (video.muted) {
+        video.pause();
+      }
+    });
+
+    const start = () => observer.observe(video);
+    if (!poster || poster.complete) {
+      start();
+    } else {
+      poster.addEventListener("load", start, { once: true });
+      poster.addEventListener("error", start, { once: true });
+    }
+
+    return () => {
+      poster?.removeEventListener("load", start);
+      poster?.removeEventListener("error", start);
+      observer.disconnect();
+    };
+  }, []);
 
   // O navegador só libera autoplay com o vídeo mudo; o som é ligado
   // pelo visitante no controle de som.
@@ -43,10 +79,20 @@ export function Hero() {
 
   return (
     <section className="relative h-[calc(100dvh-var(--spacing)*20)] overflow-hidden bg-slate-900">
+      <Image
+        ref={posterRef}
+        src={HERO_POSTER}
+        alt=""
+        fill
+        loading="eager"
+        fetchPriority="high"
+        sizes="100vw"
+        className="object-cover"
+      />
       <video
         ref={videoRef}
         src={HERO_VIDEO}
-        autoPlay
+        preload="none"
         muted={muted}
         loop
         playsInline

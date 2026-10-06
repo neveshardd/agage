@@ -25,7 +25,7 @@ export function Gallery() {
       id="obras"
       className="mx-auto w-full max-w-7xl px-6 py-16 sm:py-20 lg:px-10"
     >
-      <div className="flex items-center justify-between gap-4">
+      <div data-reveal className="flex items-center justify-between gap-4">
         <h2 className="text-2xl font-bold text-balance text-brand-navy sm:text-3xl lg:text-4xl">
           {t.gallery.title}
         </h2>
@@ -59,7 +59,7 @@ export function Gallery() {
           640: { slidesPerView: 2.2 },
           1024: { slidesPerView: 4 },
         }}
-        className="mt-10 sm:mt-12"
+        className="gallery-swiper mt-10 sm:mt-12"
       >
         {GALLERY_LOCATIONS.map((location) => (
           <SwiperSlide key={`${location.state}-${location.city}`}>

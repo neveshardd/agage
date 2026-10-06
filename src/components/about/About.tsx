@@ -7,7 +7,7 @@ export async function About() {
   return (
     <section id="sobre" className="bg-slate-50 py-20 sm:py-24">
       <div className="mx-auto grid max-w-7xl items-center gap-16 px-6 lg:grid-cols-2 lg:px-10">
-        <div className="relative">
+        <div data-reveal className="relative">
           <div className="absolute -top-6 -left-6 h-full w-full rounded-lg bg-brand-orange sm:-top-8 sm:-left-8" />
           <div className="relative aspect-4/3 w-full overflow-hidden rounded-lg shadow-xl">
             <Image
@@ -20,7 +20,7 @@ export async function About() {
           </div>
         </div>
 
-        <div>
+        <div data-reveal>
           <h2 className="text-3xl font-bold text-balance text-brand-navy sm:text-4xl">
             {t.about.title}
           </h2>

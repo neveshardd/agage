@@ -19,7 +19,10 @@ export async function Certifications() {
       />
       <div className="absolute inset-0 bg-brand-blue/60" />
 
-      <div className="relative z-10 mx-auto max-w-4xl px-6 text-center text-white lg:px-10">
+      <div
+        data-reveal
+        className="relative z-10 mx-auto max-w-4xl px-6 text-center text-white lg:px-10"
+      >
         <h2 className="text-2xl font-extrabold text-balance uppercase sm:text-3xl">
           {t.certifications.title}
         </h2>

@@ -32,8 +32,8 @@ export function MobileMenu({
       </Dialog.Trigger>
 
       <Dialog.Portal>
-        <Dialog.Backdrop className="fixed inset-0 z-40 bg-slate-900/20" />
-        <Dialog.Popup className="fixed inset-0 z-50 flex flex-col bg-white outline-none">
+        <Dialog.Backdrop className="fixed inset-0 z-40 bg-slate-900/20 transition-opacity duration-200 data-ending-style:opacity-0 data-starting-style:opacity-0" />
+        <Dialog.Popup className="fixed inset-0 z-50 flex flex-col bg-white outline-none transition-opacity duration-200 data-ending-style:opacity-0 data-starting-style:opacity-0">
           {drilldown ? (
             <MobileMenuDrilldownScreen
               item={drilldown}

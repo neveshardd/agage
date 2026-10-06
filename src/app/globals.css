@@ -26,3 +26,115 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
+
+/* Rolagem suave para os links de âncora (#servicos, #obras...). O atributo
+   `data-scroll-behavior` no <html> faz o Next manter a troca de página
+   instantânea. */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Entrada discreta dos blocos conforme a página rola. É uma animação guiada
+   pela própria rolagem (sem JavaScript, direto no compositor); navegadores sem
+   suporte simplesmente mostram o conteúdo parado. */
+@keyframes reveal {
+  from {
+    opacity: 0;
+    translate: 0 0.75rem;
+  }
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    [data-reveal] {
+      animation: reveal linear both;
+      animation-timeline: view();
+      animation-range: cover 0% cover 16%;
+    }
+  }
+}
+
+/* Faixa de logos dos clientes: 2, 3 ou 5 logos visíveis por vez. */
+.client-marquee {
+  --marquee-visible: 2;
+  --marquee-gap: 40px;
+  container-type: inline-size;
+  overflow: hidden;
+}
+
+@media (width >= 40rem) {
+  .client-marquee {
+    --marquee-visible: 3;
+    --marquee-gap: 48px;
+  }
+}
+
+@media (width >= 64rem) {
+  .client-marquee {
+    --marquee-visible: 5;
+    --marquee-gap: 56px;
+  }
+}
+
+.client-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: client-marquee linear infinite;
+  will-change: transform;
+}
+
+.client-marquee-item {
+  flex: none;
+  width: calc(
+    (100cqw - var(--marquee-gap) * (var(--marquee-visible) - 1)) /
+    var(--marquee-visible)
+  );
+  margin-right: var(--marquee-gap);
+}
+
+@keyframes client-marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .client-marquee {
+    overflow-x: auto;
+  }
+
+  .client-marquee-track {
+    animation: none;
+  }
+}
+
+/* Galeria de obras: dá aos cards, antes de o Swiper iniciar, a mesma largura
+   que ele calcula depois (mesmos `slidesPerView` e `spaceBetween` de
+   Gallery.tsx). Sem isso os cards nascem com 100% de largura e a seção muda
+   de altura na hidratação, deslocando o restante da página. */
+.gallery-swiper {
+  --gallery-per-view: 1.15;
+  --gallery-gap: 24px;
+}
+
+@media (width >= 40rem) {
+  .gallery-swiper {
+    --gallery-per-view: 2.2;
+  }
+}
+
+@media (width >= 64rem) {
+  .gallery-swiper {
+    --gallery-per-view: 4;
+  }
+}
+
+.gallery-swiper .swiper-slide {
+  width: calc(
+    (100% - var(--gallery-gap) * (var(--gallery-per-view) - 1)) /
+    var(--gallery-per-view)
+  );
+  margin-right: var(--gallery-gap);
+}

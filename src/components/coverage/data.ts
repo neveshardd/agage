@@ -1,6 +1,10 @@
 import type { LocationMarker } from "./types";
 
-export const BRAZIL_STATES_GEO_URL = "/data/brazil-states.json";
+// SVG dos estados, gerado no build por `src/app/brazil-map.svg/route.ts` a
+// partir de `brazil-states.json`.
+export const BRAZIL_MAP_SRC = "/brazil-map.svg";
+export const VIEWBOX_WIDTH = 800;
+export const VIEWBOX_HEIGHT = 650;
 
 /**
  * Edite esta lista para escolher onde os marcadores aparecem no mapa e o que

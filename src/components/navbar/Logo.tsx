@@ -19,7 +19,7 @@ export function Logo() {
         alt="AGAGE"
         width={160}
         height={37}
-        priority
+        loading="eager"
         className="h-8 w-auto"
       />
     </Link>
