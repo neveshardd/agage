@@ -10,7 +10,7 @@ export function HeroSlide({
   href: string;
 }) {
   return (
-    <div className="relative mx-auto flex h-full w-full flex-col items-center justify-center gap-4 px-6 text-center sm:gap-5">
+    <div className="relative mx-auto flex h-full w-full flex-col items-center justify-center gap-4 px-20 text-center sm:gap-5 sm:px-24">
       <h2 className="text-2xl max-w-xl leading-tight font-bold text-balance text-white sm:text-4xl lg:text-5xl">
         {text.heading}
       </h2>

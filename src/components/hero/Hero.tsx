@@ -103,7 +103,7 @@ export function Hero() {
 
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
-        navigation={{ prevEl, nextEl }}
+        navigation={{ prevEl, nextEl, addIcons: false }}
         pagination={{ el: paginationEl, clickable: true }}
         autoplay={{ delay: 6000, disableOnInteraction: false }}
         observer
@@ -112,7 +112,7 @@ export function Hero() {
         className="h-full w-full"
       >
         {HERO_SLIDES.map((slide, index) => (
-          <SwiperSlide key={index}>
+          <SwiperSlide key={t.hero.slides[index].heading}>
             <HeroSlide
               text={t.hero.slides[index]}
               href={localizeHref(locale, slide.ctaHref)}
@@ -126,7 +126,7 @@ export function Hero() {
           ref={setPrevEl}
           type="button"
           aria-label={t.hero.previous}
-          className="pointer-events-auto hidden cursor-pointer items-center justify-center text-white/80 transition-colors duration-150 hover:text-white"
+          className="pointer-events-auto flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-slate-900/40 text-white/80 transition-colors duration-150 hover:bg-slate-900/60 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
         >
           <ChevronIcon className="h-6 w-6 sm:h-8 sm:w-8" />
         </button>
@@ -134,7 +134,7 @@ export function Hero() {
           ref={setNextEl}
           type="button"
           aria-label={t.hero.next}
-          className="pointer-events-auto hidden cursor-pointer items-center justify-center text-white/80 transition-colors duration-150 hover:text-white"
+          className="pointer-events-auto flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-slate-900/40 text-white/80 transition-colors duration-150 hover:bg-slate-900/60 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
         >
           <ChevronIcon className="h-6 w-6 rotate-180 sm:h-8 sm:w-8" />
         </button>

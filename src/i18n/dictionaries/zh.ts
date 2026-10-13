@@ -58,7 +58,7 @@ export const zh: Dictionary = {
       },
       {
         alt: "施工中的枢纽站工程",
-        heading: "土方、路面与排水工程",
+        heading: "钢结构与预制厂房",
         before: "",
         after: " 为全国大小项目提供全面解决方案",
         cta: "我们的服务",
@@ -92,6 +92,8 @@ export const zh: Dictionary = {
     text: "AGAGE 集团专注于土木建筑与工业安装领域，自 2019 年以来参与了巴西各地多项重要合同。公司秉持现代化管理理念，遵循市场最佳实践和严格的合规与安全标准。",
   },
   clients: {
+    previous: "上一组客户",
+    next: "下一组客户",
     title: "我们的客户",
   },
   certifications: {

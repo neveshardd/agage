@@ -27,7 +27,6 @@ export const CLIENT_LOGOS: ClientLogo[] = [
     alt: "Fundação Renova",
   },
   { src: "/companhias/logo-htb-reta.png", alt: "HTB" },
-  { src: "/companhias/logo-oas-reta.png", alt: "OAS" },
   { src: "/companhias/logo-sacyr-reta.png", alt: "Sacyr" },
   { src: "/companhias/logo-vereda-reta.png", alt: "Vereda" },
   { src: "/companhias/logotipo-scaled.png", alt: "Prefeitura de Anápolis" },

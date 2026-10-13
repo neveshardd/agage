@@ -57,59 +57,32 @@ body {
 }
 
 /* Faixa de logos dos clientes: 2, 3 ou 5 logos visíveis por vez. */
-.client-marquee {
-  --marquee-visible: 2;
-  --marquee-gap: 40px;
-  container-type: inline-size;
-  overflow: hidden;
+.client-logos-swiper {
+  --logos-visible: 2;
+  --logos-gap: 24px;
 }
 
 @media (width >= 40rem) {
-  .client-marquee {
-    --marquee-visible: 3;
-    --marquee-gap: 48px;
+  .client-logos-swiper {
+    --logos-visible: 3;
+    --logos-gap: 40px;
   }
 }
 
 @media (width >= 64rem) {
-  .client-marquee {
-    --marquee-visible: 5;
-    --marquee-gap: 56px;
+  .client-logos-swiper {
+    --logos-visible: 5;
+    --logos-gap: 48px;
   }
 }
 
-.client-marquee-track {
-  display: flex;
-  width: max-content;
-  animation: client-marquee linear infinite;
-  will-change: transform;
-}
-
-.client-marquee-item {
-  flex: none;
+.client-logos-swiper .swiper-slide {
   width: calc(
-    (100cqw - var(--marquee-gap) * (var(--marquee-visible) - 1)) /
-    var(--marquee-visible)
+    (100% - var(--logos-gap) * (var(--logos-visible) - 1)) /
+    var(--logos-visible)
   );
-  margin-right: var(--marquee-gap);
+  margin-right: var(--logos-gap);
 }
-
-@keyframes client-marquee {
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .client-marquee {
-    overflow-x: auto;
-  }
-
-  .client-marquee-track {
-    animation: none;
-  }
-}
-
 /* Galeria de obras: dá aos cards, antes de o Swiper iniciar, a mesma largura
    que ele calcula depois (mesmos `slidesPerView` e `spaceBetween` de
    Gallery.tsx). Sem isso os cards nascem com 100% de largura e a seção muda

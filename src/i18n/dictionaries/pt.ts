@@ -58,7 +58,7 @@ export const pt = {
       },
       {
         alt: "Obra de terminal em andamento",
-        heading: "Terraplenagem, pavimentação e drenagem",
+        heading: "Galpão metálico e pré-moldado",
         before: "Soluções completas da ",
         after: " para pequenos e grandes projetos em todo o país",
         cta: "Nossos serviços",
@@ -94,6 +94,8 @@ export const pt = {
     text: "O Grupo AGAGE atua nos segmentos de construção civil e montagem industrial, destacando-se desde 2019 pela participação em contratos relevantes em todo o país. Sua atuação é pautada por uma gestão moderna, alinhada às melhores práticas de mercado e rigorosos padrões de compliance e segurança.",
   },
   clients: {
+    previous: "Clientes anteriores",
+    next: "Próximos clientes",
     title: "Nossos clientes",
   },
   certifications: {

@@ -60,7 +60,7 @@ export const es: Dictionary = {
       },
       {
         alt: "Obra de terminal en curso",
-        heading: "Movimiento de tierras, pavimentación y drenaje",
+        heading: "Naves metálicas y prefabricadas",
         before: "Soluciones completas de ",
         after: " para proyectos pequeños y grandes en todo el país",
         cta: "Nuestros servicios",
@@ -96,6 +96,8 @@ export const es: Dictionary = {
     text: "El Grupo AGAGE actúa en los segmentos de construcción civil y montaje industrial y, desde 2019, se destaca por su participación en contratos relevantes en todo Brasil. Su actuación se basa en una gestión moderna, alineada con las mejores prácticas del mercado y rigurosos estándares de compliance y seguridad.",
   },
   clients: {
+    previous: "Clientes anteriores",
+    next: "Clientes siguientes",
     title: "Nuestros clientes",
   },
   certifications: {

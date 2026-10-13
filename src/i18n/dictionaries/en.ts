@@ -60,7 +60,7 @@ export const en: Dictionary = {
       },
       {
         alt: "Terminal construction in progress",
-        heading: "Earthworks, paving and drainage",
+        heading: "Steel and precast warehouses",
         before: "Complete solutions from ",
         after: " for small and large projects across the country",
         cta: "Our services",
@@ -96,6 +96,8 @@ export const en: Dictionary = {
     text: "The AGAGE Group works in civil construction and industrial assembly and, since 2019, has stood out for its participation in major contracts across Brazil. Its work is guided by modern management, aligned with market best practices and strict compliance and safety standards.",
   },
   clients: {
+    previous: "Previous clients",
+    next: "Next clients",
     title: "Our clients",
   },
   certifications: {
