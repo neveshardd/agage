@@ -4,13 +4,14 @@ import type { ServiceAccent, ServiceData } from "./types";
 const ACCENT_STYLES: Readonly<
   Record<ServiceAccent, { tile: string; bar: string }>
 > = {
+  // Ambos em cinza: os cards ficavam coloridos demais com laranja/azul.
   orange: {
-    tile: "bg-brand-orange/10 text-brand-orange-dark",
-    bar: "bg-brand-orange",
+    tile: "bg-slate-100 text-slate-500",
+    bar: "bg-slate-300",
   },
   blue: {
-    tile: "bg-brand-blue/10 text-brand-blue",
-    bar: "bg-brand-blue",
+    tile: "bg-slate-100 text-slate-500",
+    bar: "bg-slate-300",
   },
 };
 
