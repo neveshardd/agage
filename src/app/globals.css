@@ -36,6 +36,14 @@ body {
   }
 }
 
+/* A navbar é fixa: âncoras (#contato, #obras...) param abaixo dela. A margem fica nos alvos das
+   âncoras, e não em `scroll-padding` no <html>: com ele, focar um campo da própria navbar (o
+   seletor de idioma) fazia o navegador rolar a página para "revelar" o campo. */
+section[id],
+footer[id] {
+  scroll-margin-top: 8rem;
+}
+
 /* Entrada discreta dos blocos conforme a página rola. É uma animação guiada
    pela própria rolagem (sem JavaScript, direto no compositor); navegadores sem
    suporte simplesmente mostram o conteúdo parado. */

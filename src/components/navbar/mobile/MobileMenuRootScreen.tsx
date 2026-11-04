@@ -1,8 +1,7 @@
 import { Dialog } from "@base-ui/react/dialog";
+import { IconChevronRight, IconX } from "@tabler/icons-react";
 import Link from "next/link";
 import { useI18n } from "@/i18n/I18nProvider";
-import { ChevronRightIcon } from "../icons/ChevronRightIcon";
-import { CloseIcon } from "../icons/CloseIcon";
 import { LanguageSwitcher } from "../LanguageSwitcher";
 import { Logo } from "../Logo";
 import type { NavItemData } from "../types";
@@ -24,7 +23,7 @@ export function MobileMenuRootScreen({
           aria-label={t.navbar.closeMenu}
           className="flex cursor-pointer items-center justify-center text-black"
         >
-          <CloseIcon className="h-4 w-4" />
+          <IconX aria-hidden className="h-5 w-5" />
         </Dialog.Close>
       </div>
 
@@ -41,7 +40,10 @@ export function MobileMenuRootScreen({
               className="-mx-3 flex cursor-pointer items-center justify-between border-b border-slate-200 px-3 py-4 text-[15px] font-bold text-black hover:bg-slate-200"
             >
               {item.label}
-              <ChevronRightIcon className="h-3 w-3 shrink-0 text-black" />
+              <IconChevronRight
+                aria-hidden
+                className="h-4 w-4 shrink-0 text-black"
+              />
             </button>
           ) : (
             <Dialog.Close

@@ -3,7 +3,7 @@ import type { ProjectId } from "@/i18n/dictionaries";
 export interface LocationProject {
   id: ProjectId;
   client: string;
-  image: string;
+  /** A foto é o slot de imagem `projects.<id>` (src/content/images.ts). */
   /** Quando `false`, a obra aparece só no mapa, fora da galeria "Nossas obras". */
   inGallery?: boolean;
 }

@@ -1,3 +1,4 @@
+import { privacyEn } from "./privacy/en";
 import type { Dictionary } from "./pt";
 
 export const en: Dictionary = {
@@ -14,6 +15,7 @@ export const en: Dictionary = {
   },
   navbar: {
     logoLabel: "AGAGE — Home page",
+    utilityNav: "Shortcuts",
     openMenu: "Open menu",
     closeMenu: "Close menu",
     mainNav: "Main",
@@ -22,18 +24,9 @@ export const en: Dictionary = {
     agage: {
       label: "About AGAGE",
       institutional: "Company",
-      aboutUs: "About us",
       missionVisionValues: "Mission, vision and values",
-      certifications: "Certifications",
-      skilledLabor: "Skilled workforce",
-      operations: "Operations",
-      whereWeWork: "Where we operate",
-      ourProjects: "Our projects",
-      transparency: "Transparency",
       ombudsman: "Ombudsman and Reporting",
     },
-    projects: "Projects",
-    contact: "Contact",
   },
   hero: {
     previous: "Previous slide",
@@ -178,19 +171,15 @@ export const en: Dictionary = {
   servicesSection: {
     title: "Our services",
   },
-  cta: {
-    imageAlt: "AGAGE team on site",
-    title: "Engineering solutions for your next project",
-    text: "Get in touch with AGAGE's technical team and learn about our civil construction and industrial assembly solutions.",
-    button: "Contact us",
-  },
   ombudsman: {
-    imageAlt: "AGAGE employees on site",
     logoAlt: "Ombudsman and Reporting",
     qrLabel: "Open the Ombudsman and Reporting channel",
     qrAlt: "Ombudsman channel QR code",
     title: "Ombudsman and Reporting Channel",
     text: "A direct line to the company's leadership, protected by end-to-end encryption that guarantees the anonymity of whoever reports.",
+    cardText:
+      "Open the link or point your phone camera at the QR code. The anonymity of whoever reports is guaranteed.",
+    button: "Open the channel",
   },
   footer: {
     quickAccess: "Quick links",
@@ -201,7 +190,7 @@ export const en: Dictionary = {
     whereWeWork: "Where we operate",
     certifications: "Certifications",
     ombudsman: "Ombudsman and Reporting",
-    rights: "AGAGE Engineering and Industrial Assembly. All rights reserved",
+    rights: "AGAGE. All rights reserved",
     privacy: "Privacy Policy",
     developedBy: "Developed by",
     backToTop: "Back to top",
@@ -223,6 +212,163 @@ export const en: Dictionary = {
       "Teamwork",
       "Respect for the client",
     ],
+  },
+  collaborator: {
+    menu: "Employees",
+    menuHeading: "Employee area",
+    links: {
+      onboarding: "Onboarding",
+      safety: "Occupational Safety",
+      documents: "Company documents",
+    },
+    video: {
+      heading: "Watch the video",
+      unavailable: "The video will be available soon.",
+      unsupported: "Your browser cannot play this video.",
+    },
+    documents: {
+      heading: "Documents",
+      empty: "No documents published at the moment.",
+      emptyHint:
+        "As soon as a document is published, it will appear here to view and download.",
+      open: "Open",
+      download: "Download",
+      revision: "Revision",
+      updated: "Updated on",
+      unavailable:
+        "We could not load this content right now. Please try again in a few minutes.",
+    },
+    onboarding: {
+      title: "Onboarding",
+      metaDescription:
+        "Onboarding for new AGAGE employees: internal regulations, duties, working hours, prohibitions and penalties.",
+      intro:
+        "Welcome to AGAGE. This page gathers what you need to know on your first day: the rules that keep our team working well, which apply to everyone, from helper to director.",
+      pillars: ["Respect", "Responsibility", "Safety"],
+      sections: [
+        {
+          title: "Internal Regulations",
+          text: "The Internal Regulations are part of your employment contract. They are not just paperwork: they are a commitment, and they apply to everyone regardless of position.",
+          items: [],
+        },
+        {
+          title: "Your duties",
+          text: "What is expected of you every day:",
+          items: [
+            "Do your work with care and attention and follow your supervisors' instructions.",
+            "Keep the workplace organized, disciplined and clean.",
+            "Eat only in the areas provided by the company.",
+            "Leave personal belongings in the lockers before clocking in.",
+            "Use PPE correctly, respect collective protection equipment and attend safety training.",
+            "Be accountable for damage caused to the company, including equipment, vehicles and traffic fines.",
+          ],
+        },
+        {
+          title: "Working hours and time clock",
+          text: "The standard schedule is 44 hours per week. Clocking in is personal and must be done strictly by you: clocking in for a coworker is a serious offense.",
+          items: [],
+        },
+        {
+          title: "What is prohibited",
+          text: "Explicit prohibitions in the regulations:",
+          items: [
+            "Any form of discrimination or harassment.",
+            "Using confidential information for personal gain or disclosing salaries.",
+            "Accepting or offering bribes, gifts or any undue advantage.",
+            "Missing work without justification or organizing stoppages without legal basis.",
+            "Using mobile phones, electronic devices or USB drives without authorization.",
+            "Doing private work with the company's time, tools or materials.",
+          ],
+        },
+        {
+          title: "Relationships at work",
+          text: "Romantic relationships between coworkers must be reported to the company, to avoid conflicts of interest, especially when one supervises the other or both work on the same team.",
+          items: [],
+        },
+        {
+          title: "Penalties",
+          text: "Applied according to the seriousness of the offense:",
+          items: [
+            "Verbal warning.",
+            "Written warning.",
+            "Suspension of 1 or 2 days.",
+            "Dismissal for just cause, in the most serious cases.",
+          ],
+        },
+      ],
+      closing:
+        "Any questions? Talk to your supervisor or HR. If you do your part, we build the rest together. Welcome to the team!",
+    },
+    safety: {
+      title: "Occupational Safety",
+      metaDescription:
+        "AGAGE occupational health and safety programs: PGR, PCMSO, PCA, PPR, AET, PPE and critical activities.",
+      intro:
+        "At AGAGE, the goal that matters most, above deadlines and output, is a single one: everyone goes home safe. That is why occupational health and safety are organized into mandatory programs, following the Brazilian Regulatory Standards (NRs) of the Ministry of Labor and Employment.",
+      programsTitle: "Our programs",
+      programs: [
+        {
+          acronym: "PGR",
+          name: "Risk Management Program",
+          norm: "NR-1",
+          text: "Inventories the risks of each job, characterizes the work environments and sets the action plan to eliminate or control each risk.",
+        },
+        {
+          acronym: "PCMSO",
+          name: "Occupational Health Medical Control Program",
+          norm: "NR-7",
+          text: "Prevents illness and detects problems early through pre-employment, periodic, return-to-work, change-of-risk and exit examinations.",
+        },
+        {
+          acronym: "PCA",
+          name: "Hearing Conservation Program",
+          norm: "",
+          text: "Measures noise with dosimeters and monitors your hearing with audiometry. Wear hearing protection whenever indicated, properly fitted, throughout the exposure.",
+        },
+        {
+          acronym: "PPR",
+          name: "Respiratory Protection Program",
+          norm: "NR-6, NR-9, NR-15 and NR-18",
+          text: "Defines the right respirator for each task, such as PFF2 and PFF3 masks, and the training for correct use. A mask on your chin protects nothing; replace any that is dirty, crushed or expired.",
+        },
+        {
+          acronym: "AET",
+          name: "Ergonomic Work Analysis",
+          norm: "NR-17",
+          text: "Adapts the work to the worker's body and mind to prevent back pain, strains and fatigue. Bend your knees to lift, ask for help with heavy loads and respect the breaks.",
+        },
+      ],
+      sections: [
+        {
+          title: "PPE and collective protection",
+          text: "Using Personal Protective Equipment correctly and respecting Collective Protection Equipment is everyone's duty. Every item you receive is recorded on your PPE sheet: if it is damaged, lost or expired, ask for a replacement. Never remove collective protection without authorization.",
+          items: [],
+        },
+        {
+          title: "Critical activities",
+          text: "Before any risky activity, the team carries out a Preliminary Risk Analysis (APR), and you receive the Work Order for your job. Three types of work require formal training and authorization, without exception:",
+          items: [
+            "Work with electricity (NR-10).",
+            "Work in confined spaces (NR-33).",
+            "Work at height (NR-35).",
+          ],
+        },
+        {
+          title: "Scaffolding",
+          text: "Scaffolding and metal platforms are assembled according to technical manuals and under the technical responsibility record (ART) of a responsible engineer. Spotted scaffolding without identification, with missing parts or modified without approval? Do not climb it and report it right away.",
+          items: [],
+        },
+      ],
+      closing:
+        "Spotted a risky situation? Talk to the safety technician or your supervisor. Speaking up is not snitching: it is looking after the people working beside you.",
+    },
+    institutional: {
+      title: "Company documents",
+      metaDescription:
+        "AGAGE internal regulations, policies and other current company documents.",
+      intro:
+        "AGAGE internal regulations, policies and other current company documents, available to view and download.",
+    },
   },
   services: {
     "obras-civis": {
@@ -286,4 +432,5 @@ export const en: Dictionary = {
         "Repair, strengthening and protection of concrete and steel structures.",
     },
   },
+  privacy: privacyEn,
 };

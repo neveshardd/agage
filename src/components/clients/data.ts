@@ -1,33 +1,27 @@
+import type { ImageKey } from "@/content/images";
+
 export interface ClientLogo {
-  src: string;
+  /** Slot de imagem editável (src/content/images.ts). */
+  image: ImageKey;
   alt: string;
 }
 
 export const CLIENT_LOGOS: ClientLogo[] = [
-  {
-    src: "/companhias/Votorantim_Cimentos_Logo.png",
-    alt: "Votorantim Cimentos",
-  },
-  { src: "/companhias/cemig-logo-0.png", alt: "CEMIG" },
-  { src: "/companhias/logo-ceb.png", alt: "CEB" },
-  {
-    src: "/companhias/Pan_American_Energy_logo.svg_.png",
-    alt: "Pan American Energy",
-  },
-  { src: "/companhias/rumo.png", alt: "Rumo" },
-  { src: "/companhias/eterc.png", alt: "ETERC Engenharia" },
-  { src: "/companhias/brt-goiania.png", alt: "BRT Goiânia" },
-  { src: "/companhias/cni-logo-1-scaled.png", alt: "CNI" },
-  { src: "/companhias/FICO-e1733330677310.png", alt: "FICO" },
-  { src: "/companhias/logo-andrade-reta.png", alt: "Andrade Gutierrez" },
-  { src: "/companhias/logo-btec-reta.png", alt: "BTEC Construções" },
-  { src: "/companhias/logo-conserva-reta.png", alt: "Conserva Engenharia" },
-  {
-    src: "/companhias/logo-fundacao-renova-reta.png",
-    alt: "Fundação Renova",
-  },
-  { src: "/companhias/logo-htb-reta.png", alt: "HTB" },
-  { src: "/companhias/logo-sacyr-reta.png", alt: "Sacyr" },
-  { src: "/companhias/logo-vereda-reta.png", alt: "Vereda" },
-  { src: "/companhias/logotipo-scaled.png", alt: "Prefeitura de Anápolis" },
+  { image: "clients.votorantim", alt: "Votorantim Cimentos" },
+  { image: "clients.cemig", alt: "CEMIG" },
+  { image: "clients.ceb", alt: "CEB" },
+  { image: "clients.pan-american", alt: "Pan American Energy" },
+  { image: "clients.rumo", alt: "Rumo" },
+  { image: "clients.eterc", alt: "ETERC Engenharia" },
+  { image: "clients.brt-goiania", alt: "BRT Goiânia" },
+  { image: "clients.cni", alt: "CNI" },
+  { image: "clients.fico", alt: "FICO" },
+  { image: "clients.andrade-gutierrez", alt: "Andrade Gutierrez" },
+  { image: "clients.btec", alt: "BTEC Construções" },
+  { image: "clients.conserva", alt: "Conserva Engenharia" },
+  { image: "clients.fundacao-renova", alt: "Fundação Renova" },
+  { image: "clients.htb", alt: "HTB" },
+  { image: "clients.sacyr", alt: "Sacyr" },
+  { image: "clients.vereda", alt: "Vereda" },
+  { image: "clients.anapolis", alt: "Prefeitura de Anápolis" },
 ];

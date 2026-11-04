@@ -3,7 +3,7 @@ import { getI18n } from "@/i18n/server";
 import { CERTIFICATION_BADGES } from "./data";
 
 export async function Certifications() {
-  const { t } = await getI18n();
+  const { t, images } = await getI18n();
 
   return (
     <section
@@ -11,7 +11,7 @@ export async function Certifications() {
       className="relative overflow-hidden py-16 sm:py-20"
     >
       <Image
-        src="/obra-aerea.jpg"
+        src={images["certifications.background"]}
         alt={t.certifications.imageAlt}
         fill
         sizes="100vw"
@@ -32,9 +32,12 @@ export async function Certifications() {
 
         <div className="mx-auto mt-10 flex max-w-4xl flex-wrap items-center justify-center gap-6 sm:gap-8">
           {CERTIFICATION_BADGES.map((badge, index) => (
-            <div key={badge.src} className="relative h-36 w-36 sm:h-44 sm:w-44">
+            <div
+              key={badge.image}
+              className="relative h-36 w-36 sm:h-44 sm:w-44"
+            >
               <Image
-                src={badge.src}
+                src={images[badge.image]}
                 alt={t.certifications.badges[index]}
                 fill
                 sizes="176px"

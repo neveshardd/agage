@@ -1,8 +1,7 @@
 import { Dialog } from "@base-ui/react/dialog";
+import { IconChevronLeft, IconChevronRight, IconX } from "@tabler/icons-react";
 import Link from "next/link";
 import { useI18n } from "@/i18n/I18nProvider";
-import { ChevronRightIcon } from "../icons/ChevronRightIcon";
-import { CloseIcon } from "../icons/CloseIcon";
 import { Logo } from "../Logo";
 import type { NavItemData } from "../types";
 
@@ -23,7 +22,7 @@ export function MobileMenuDrilldownScreen({
           onClick={onBack}
           className="flex cursor-pointer items-center gap-1.5 text-[15px] font-bold text-black underline underline-offset-4"
         >
-          <ChevronRightIcon className="h-3 w-3 rotate-180" />
+          <IconChevronLeft aria-hidden className="h-4 w-4" />
           {t.common.back}
         </button>
         <Logo />
@@ -31,7 +30,7 @@ export function MobileMenuDrilldownScreen({
           aria-label={t.navbar.closeMenu}
           className="flex cursor-pointer items-center justify-end text-black"
         >
-          <CloseIcon className="h-4 w-4" />
+          <IconX aria-hidden className="h-5 w-5" />
         </Dialog.Close>
       </div>
 
@@ -53,7 +52,10 @@ export function MobileMenuDrilldownScreen({
                   className="-mx-3 flex items-center justify-between gap-2 rounded-md px-3 py-3 text-[15px] font-bold text-black hover:bg-slate-200"
                 >
                   {link.label}
-                  <ChevronRightIcon className="h-3 w-3 shrink-0 text-black" />
+                  <IconChevronRight
+                    aria-hidden
+                    className="h-4 w-4 shrink-0 text-black"
+                  />
                 </Dialog.Close>
               ))}
             </div>

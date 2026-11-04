@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Figtree } from "next/font/google";
+import { VLibras } from "@/components/accessibility";
 import { Footer } from "@/components/footer";
 import { Navbar } from "@/components/navbar";
 import { HTML_LANG, LOCALES } from "@/i18n/config";
@@ -42,7 +43,7 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata(): Promise<Metadata> {
-  const { locale, t } = await getI18n();
+  const { locale, t, images } = await getI18n();
 
   return {
     metadataBase: new URL(SITE_URL),
@@ -55,14 +56,14 @@ export async function generateMetadata(): Promise<Metadata> {
       title: SITE_NAME,
       description: t.meta.description,
       locale: HTML_LANG[locale].replace("-", "_"),
-      images: [{ url: "/mao-de-obra.jpg", width: 2560, height: 1354 }],
+      images: [{ url: images["meta.ogImage"] }],
     },
     twitter: { card: "summary_large_image" },
   };
 }
 
 export default async function RootLayout({ children }: LayoutProps<"/[lang]">) {
-  const { locale, t } = await getI18n();
+  const { locale, t, images } = await getI18n();
 
   return (
     <html
@@ -76,11 +77,12 @@ export default async function RootLayout({ children }: LayoutProps<"/[lang]">) {
           // biome-ignore lint/security/noDangerouslySetInnerHtml: JSON-LD estático gerado no servidor.
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
-        <I18nProvider locale={locale} t={t}>
+        <I18nProvider locale={locale} t={t} images={images}>
           <Navbar />
           {children}
           <Footer />
         </I18nProvider>
+        <VLibras />
       </body>
     </html>
   );

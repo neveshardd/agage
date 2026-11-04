@@ -1,0 +1,58 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "agage-site",
+  // Conta agage.eng@gmail.com (zona agage.com.br).
+  "account_id": "acd5148881e4fe2cabc5e85ebee3335a",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2026-11-01",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  // Domínios do site (zona agage.com.br nesta conta). A URL *.workers.dev fica ativa para testes.
+  "routes": [
+    { "pattern": "agage.com.br", "custom_domain": true },
+    { "pattern": "www.agage.com.br", "custom_domain": true }
+  ],
+  "workers_dev": true,
+  "observability": {
+    "enabled": true
+  },
+  "vars": {
+    // API pública do backoffice (textos e imagens editáveis, vídeos e documentos).
+    "AGAGE_API_URL": "https://api.agage.com.br"
+  },
+  // Cache do ISR (páginas e fetch com revalidate).
+  "kv_namespaces": [
+    {
+      "binding": "NEXT_INC_CACHE_KV",
+      "id": "ea08e26ba16e4e16b30442a24bd0f88a"
+    }
+  ],
+  // Fila de revalidação do ISR.
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "NEXT_CACHE_DO_QUEUE",
+        "class_name": "DOQueueHandler"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": ["DOQueueHandler"]
+    }
+  ],
+  "services": [
+    {
+      "binding": "WORKER_SELF_REFERENCE",
+      "service": "agage-site"
+    }
+  ],
+  // Otimização do next/image (AVIF/WebP) pelo Cloudflare Images.
+  "images": {
+    "binding": "IMAGES"
+  }
+}

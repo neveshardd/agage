@@ -1,7 +1,13 @@
 import { MegaMenuLink } from "./MegaMenuLink";
 import type { MegaMenuColumnData } from "./types";
 
-export function MegaMenuColumn({ column }: { column: MegaMenuColumnData }) {
+export function MegaMenuColumn({
+  column,
+  onActivateLink,
+}: {
+  column: MegaMenuColumnData;
+  onActivateLink: (image: string) => void;
+}) {
   return (
     <div className="flex flex-col gap-8">
       {column.sections.map((section) => (
@@ -12,7 +18,7 @@ export function MegaMenuColumn({ column }: { column: MegaMenuColumnData }) {
           <ul className="flex flex-col gap-1">
             {section.links.map((link) => (
               <li key={link.label}>
-                <MegaMenuLink link={link} />
+                <MegaMenuLink link={link} onActivate={onActivateLink} />
               </li>
             ))}
           </ul>

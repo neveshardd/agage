@@ -1,3 +1,4 @@
+import { privacyPt } from "./privacy/pt";
 export const pt = {
   meta: {
     description:
@@ -12,6 +13,7 @@ export const pt = {
   },
   navbar: {
     logoLabel: "AGAGE — Página inicial",
+    utilityNav: "Atalhos",
     openMenu: "Abrir menu",
     closeMenu: "Fechar menu",
     mainNav: "Principal",
@@ -20,18 +22,9 @@ export const pt = {
     agage: {
       label: "A AGAGE",
       institutional: "Institucional",
-      aboutUs: "Quem somos",
       missionVisionValues: "Missão, visão e valores",
-      certifications: "Certificações",
-      skilledLabor: "Mão de obra especializada",
-      operations: "Atuação",
-      whereWeWork: "Onde atuamos",
-      ourProjects: "Nossas obras",
-      transparency: "Transparência",
       ombudsman: "Ouvidoria e Denúncia",
     },
-    projects: "Obras",
-    contact: "Contato",
   },
   hero: {
     previous: "Slide anterior",
@@ -176,19 +169,15 @@ export const pt = {
   servicesSection: {
     title: "Nossos serviços",
   },
-  cta: {
-    imageAlt: "Equipe da AGAGE em obra",
-    title: "Soluções em engenharia para o seu próximo projeto",
-    text: "Entre em contato com a equipe técnica da AGAGE e conheça nossas soluções em construção civil e montagem industrial.",
-    button: "Entrar em contato",
-  },
   ombudsman: {
-    imageAlt: "Colaboradores da AGAGE em obra",
     logoAlt: "Ouvidoria e Denúncia",
     qrLabel: "Acessar o canal de Ouvidoria e Denúncia",
     qrAlt: "QR Code do canal de Ouvidoria",
     title: "Canal de Ouvidoria e Denúncia",
     text: "Canal direto com a diretoria da empresa, protegido por criptografia de ponta a ponta, que garante o anonimato de quem denuncia.",
+    cardText:
+      "Acesse pelo link ou aponte a câmera do celular para o QR Code. O anonimato de quem denuncia é garantido.",
+    button: "Acessar o canal",
   },
   footer: {
     quickAccess: "Acesso rápido",
@@ -199,8 +188,7 @@ export const pt = {
     whereWeWork: "Onde atuamos",
     certifications: "Certificações",
     ombudsman: "Ouvidoria e Denúncia",
-    rights:
-      "AGAGE Engenharia e Montagem Industrial. Todos os direitos reservados",
+    rights: "AGAGE. Todos os direitos reservados",
     privacy: "Política de Privacidade",
     developedBy: "Desenvolvido por",
     backToTop: "Voltar ao topo",
@@ -222,6 +210,163 @@ export const pt = {
       "Trabalho colaborativo",
       "Respeito ao cliente",
     ],
+  },
+  collaborator: {
+    menu: "Colaborador",
+    menuHeading: "Área do colaborador",
+    links: {
+      onboarding: "Integração",
+      safety: "Segurança do Trabalho",
+      documents: "Documentos institucionais",
+    },
+    video: {
+      heading: "Assista ao vídeo",
+      unavailable: "O vídeo estará disponível em breve.",
+      unsupported: "Seu navegador não consegue reproduzir este vídeo.",
+    },
+    documents: {
+      heading: "Documentos",
+      empty: "Nenhum documento publicado no momento.",
+      emptyHint:
+        "Assim que um documento for publicado, ele aparecerá aqui para consulta e download.",
+      open: "Abrir",
+      download: "Baixar",
+      revision: "Revisão",
+      updated: "Atualizado em",
+      unavailable:
+        "Não foi possível carregar o conteúdo agora. Tente novamente em alguns minutos.",
+    },
+    onboarding: {
+      title: "Integração",
+      metaDescription:
+        "Integração de novos colaboradores da AGAGE: regulamento interno, deveres, jornada, proibições e penalidades.",
+      intro:
+        "Seja bem-vindo à AGAGE. Esta página reúne o que você precisa saber no primeiro dia: as regras que fazem a nossa equipe funcionar bem e que valem para todos, do ajudante ao diretor.",
+      pillars: ["Respeito", "Responsabilidade", "Segurança"],
+      sections: [
+        {
+          title: "Regulamento Interno",
+          text: "O Regulamento Interno faz parte do seu contrato de trabalho. Não é um papel qualquer: é um compromisso assumido, e vale para todos, sem distinção de cargo.",
+          items: [],
+        },
+        {
+          title: "Seus deveres",
+          text: "O que se espera de você no dia a dia:",
+          items: [
+            "Cumprir o trabalho com zelo e atenção e acatar as orientações dos superiores.",
+            "Manter o local de trabalho organizado, disciplinado e limpo.",
+            "Fazer as refeições apenas nos locais disponibilizados pela empresa.",
+            "Deixar os pertences pessoais no guarda-volumes antes de marcar o ponto.",
+            "Usar corretamente os EPIs, respeitar os EPCs e participar dos treinamentos de segurança.",
+            "Responder por prejuízos causados à empresa, inclusive danos a equipamentos, veículos e multas de trânsito.",
+          ],
+        },
+        {
+          title: "Jornada e ponto",
+          text: "A jornada padrão é de 44 horas semanais. O ponto é pessoal e deve ser marcado rigorosamente por você: marcar o ponto de um colega é falta grave.",
+          items: [],
+        },
+        {
+          title: "O que é proibido",
+          text: "Proibições expressas do regulamento:",
+          items: [
+            "Qualquer forma de discriminação ou assédio.",
+            "Usar informações confidenciais em proveito próprio ou divulgar salários.",
+            "Aceitar ou oferecer suborno, presentes ou qualquer vantagem indevida.",
+            "Faltar sem justificativa ou promover paralisações sem respaldo legal.",
+            "Usar celular, aparelhos eletrônicos ou pen drive sem autorização.",
+            "Fazer serviço particular com o tempo, as ferramentas ou os materiais da empresa.",
+          ],
+        },
+        {
+          title: "Relacionamentos no trabalho",
+          text: "Relações afetivas entre colegas devem ser comunicadas à empresa. O objetivo é evitar conflitos de interesse, principalmente quando há relação de chefia ou trabalho na mesma equipe.",
+          items: [],
+        },
+        {
+          title: "Penalidades",
+          text: "Aplicadas de acordo com a gravidade da infração:",
+          items: [
+            "Advertência verbal.",
+            "Advertência escrita.",
+            "Suspensão de 1 ou 2 dias.",
+            "Demissão por justa causa, nos casos mais graves.",
+          ],
+        },
+      ],
+      closing:
+        "Ficou com alguma dúvida? Procure o seu encarregado ou o RH. Fazendo a sua parte, o resto a gente constrói junto. Bem-vindo ao time!",
+    },
+    safety: {
+      title: "Segurança do Trabalho",
+      metaDescription:
+        "Programas de segurança e saúde no trabalho da AGAGE: PGR, PCMSO, PCA, PPR, AET, EPIs e atividades críticas.",
+      intro:
+        "Na AGAGE, a meta que mais importa, acima de prazo e de produção, é uma só: todo mundo voltar para casa inteiro. Por isso a segurança e a saúde no trabalho são organizadas em programas obrigatórios, conforme as Normas Regulamentadoras (NRs) do Ministério do Trabalho e Emprego.",
+      programsTitle: "Nossos programas",
+      programs: [
+        {
+          acronym: "PGR",
+          name: "Programa de Gerenciamento de Riscos",
+          norm: "NR-1",
+          text: "Inventaria os riscos de cada função, caracteriza os ambientes de trabalho e define o plano de ação para eliminar ou controlar cada risco.",
+        },
+        {
+          acronym: "PCMSO",
+          name: "Programa de Controle Médico de Saúde Ocupacional",
+          norm: "NR-7",
+          text: "Previne doenças e identifica problemas cedo, com exames admissional, periódicos, de retorno ao trabalho, de mudança de risco e demissional.",
+        },
+        {
+          acronym: "PCA",
+          name: "Programa de Conservação Auditiva",
+          norm: "",
+          text: "Avalia o ruído com dosímetro e acompanha a sua audição com audiometria. Use o protetor auricular sempre que indicado, bem colocado, durante toda a exposição.",
+        },
+        {
+          acronym: "PPR",
+          name: "Programa de Proteção Respiratória",
+          norm: "NR-6, NR-9, NR-15 e NR-18",
+          text: "Define o respirador certo para cada atividade, como PFF2 e PFF3, e o treinamento para o uso correto. Máscara no queixo não protege; troque a que estiver suja, amassada ou vencida.",
+        },
+        {
+          acronym: "AET",
+          name: "Análise Ergonômica do Trabalho",
+          norm: "NR-17",
+          text: "Adapta o trabalho ao corpo e à mente do trabalhador para evitar lombalgias, distensões e fadiga. Dobre os joelhos para levantar peso, peça ajuda com cargas pesadas e respeite as pausas.",
+        },
+      ],
+      sections: [
+        {
+          title: "EPI e EPC",
+          text: "Usar corretamente os Equipamentos de Proteção Individual e respeitar os Equipamentos de Proteção Coletiva é obrigação de todos. Cada EPI recebido é registrado na sua ficha: danificou, perdeu ou venceu, peça a troca. Nunca retire uma proteção coletiva sem autorização.",
+          items: [],
+        },
+        {
+          title: "Atividades críticas",
+          text: "Antes de qualquer atividade de risco, a equipe faz a APR (Análise Preliminar de Risco), e você recebe a Ordem de Serviço da sua função. Três tipos de trabalho exigem treinamento e autorização formal, sem exceção:",
+          items: [
+            "Trabalho com eletricidade (NR-10).",
+            "Trabalho em espaço confinado (NR-33).",
+            "Trabalho em altura (NR-35).",
+          ],
+        },
+        {
+          title: "Andaimes",
+          text: "Andaimes e pisos metálicos são montados conforme manuais técnicos e com a ART de um engenheiro responsável. Viu um andaime sem identificação, incompleto ou modificado sem liberação? Não suba e avise na hora.",
+          items: [],
+        },
+      ],
+      closing:
+        "Viu uma situação de risco? Fale com o técnico de segurança ou com o seu encarregado. Avisar não é dedurar: é cuidar de quem trabalha do seu lado.",
+    },
+    institutional: {
+      title: "Documentos institucionais",
+      metaDescription:
+        "Regimento interno, políticas e demais documentos institucionais vigentes da AGAGE.",
+      intro:
+        "Regimento interno, políticas e demais documentos institucionais vigentes da AGAGE, disponíveis para consulta e download.",
+    },
   },
   services: {
     "obras-civis": {
@@ -285,6 +430,7 @@ export const pt = {
         "Recuperação, reforço e proteção de estruturas de concreto e metálicas.",
     },
   },
+  privacy: privacyPt,
 };
 
 export type Dictionary = typeof pt;

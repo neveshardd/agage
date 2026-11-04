@@ -2,7 +2,14 @@ import type { MetadataRoute } from "next";
 import { HTML_LANG, LOCALES, localizeHref } from "@/i18n/config";
 import { SITE_URL } from "@/i18n/seo";
 
-const PATHS = ["/", "/missao-visao-e-valores"];
+const PATHS = [
+  "/",
+  "/missao-visao-e-valores",
+  "/integracao",
+  "/seguranca-do-trabalho",
+  "/documentos",
+  "/politica-de-privacidade",
+];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return PATHS.flatMap((path) =>

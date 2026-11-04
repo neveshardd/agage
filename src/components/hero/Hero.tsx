@@ -4,19 +4,23 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
+import {
+  IconChevronLeft,
+  IconChevronRight,
+  IconVolume,
+  IconVolumeOff,
+} from "@tabler/icons-react";
 import Image from "next/image";
 import { type CSSProperties, useEffect, useRef, useState } from "react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { localizeHref } from "@/i18n/config";
 import { useI18n } from "@/i18n/I18nProvider";
-import { HERO_POSTER, HERO_SLIDES, HERO_VIDEO } from "./data";
+import { HERO_SLIDES, HERO_VIDEO } from "./data";
 import { HeroSlide } from "./HeroSlide";
-import { ChevronIcon } from "./icons/ChevronIcon";
-import { VolumeIcon } from "./icons/VolumeIcon";
 
 export function Hero() {
-  const { locale, t } = useI18n();
+  const { locale, t, images } = useI18n();
   const [prevEl, setPrevEl] = useState<HTMLButtonElement | null>(null);
   const [nextEl, setNextEl] = useState<HTMLButtonElement | null>(null);
   const [paginationEl, setPaginationEl] = useState<HTMLDivElement | null>(null);
@@ -78,107 +82,115 @@ export function Hero() {
   }
 
   return (
-    <section className="relative h-[calc(100dvh-var(--spacing)*20)] overflow-hidden bg-slate-900">
-      <Image
-        ref={posterRef}
-        src={HERO_POSTER}
-        alt=""
-        fill
-        loading="eager"
-        fetchPriority="high"
-        sizes="100vw"
-        className="object-cover"
-      />
-      <video
-        ref={videoRef}
-        src={HERO_VIDEO}
-        preload="none"
-        muted={muted}
-        loop
-        playsInline
-        aria-hidden
-        className="absolute inset-0 h-full w-full object-cover"
-      />
-      <div className="absolute inset-0 bg-slate-900/55" />
+    <section className="mx-auto w-full max-w-screen-2xl px-4 pt-4 sm:px-6 sm:pt-5 lg:px-10 lg:pt-6">
+      <div className="relative isolate h-[calc(100svh-var(--spacing)*28)] min-h-[26rem] overflow-hidden rounded-xl bg-slate-900 sm:h-auto sm:aspect-[2/1] sm:max-h-[calc(100dvh-var(--spacing)*30)] sm:min-h-[28rem] sm:rounded-2xl">
+        <Image
+          ref={posterRef}
+          src={images["hero.poster"]}
+          alt=""
+          fill
+          loading="eager"
+          fetchPriority="high"
+          sizes="(min-width: 1536px) 1456px, 100vw"
+          className="object-cover"
+        />
+        <video
+          ref={videoRef}
+          src={HERO_VIDEO}
+          preload="none"
+          muted={muted}
+          loop
+          playsInline
+          aria-hidden
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-slate-900/55" />
 
-      <Swiper
-        modules={[Navigation, Pagination, Autoplay]}
-        navigation={{ prevEl, nextEl, addIcons: false }}
-        pagination={{ el: paginationEl, clickable: true }}
-        autoplay={{ delay: 6000, disableOnInteraction: false }}
-        observer
-        observeParents
-        loop
-        className="h-full w-full"
-      >
-        {HERO_SLIDES.map((slide, index) => (
-          <SwiperSlide key={t.hero.slides[index].heading}>
-            <HeroSlide
-              text={t.hero.slides[index]}
-              href={localizeHref(locale, slide.ctaHref)}
-            />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+        <Swiper
+          modules={[Navigation, Pagination, Autoplay]}
+          navigation={{ prevEl, nextEl, addIcons: false }}
+          pagination={{ el: paginationEl, clickable: true }}
+          autoplay={{ delay: 6000, disableOnInteraction: false }}
+          observer
+          observeParents
+          loop
+          className="h-full w-full"
+        >
+          {HERO_SLIDES.map((slide, index) => (
+            <SwiperSlide key={t.hero.slides[index].heading}>
+              <HeroSlide
+                text={t.hero.slides[index]}
+                href={localizeHref(locale, slide.ctaHref)}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
 
-      <div className="pointer-events-none absolute inset-0 z-10 mx-auto flex max-w-7xl items-center justify-between px-6 lg:px-10">
-        <button
-          ref={setPrevEl}
-          type="button"
-          aria-label={t.hero.previous}
-          className="pointer-events-auto flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-slate-900/40 text-white/80 transition-colors duration-150 hover:bg-slate-900/60 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-        >
-          <ChevronIcon className="h-6 w-6 sm:h-8 sm:w-8" />
-        </button>
-        <button
-          ref={setNextEl}
-          type="button"
-          aria-label={t.hero.next}
-          className="pointer-events-auto flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-slate-900/40 text-white/80 transition-colors duration-150 hover:bg-slate-900/60 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-        >
-          <ChevronIcon className="h-6 w-6 rotate-180 sm:h-8 sm:w-8" />
-        </button>
-      </div>
+        <div className="pointer-events-none absolute inset-0 z-10 mx-auto flex max-w-screen-2xl items-center justify-between px-6 lg:px-10">
+          <button
+            ref={setPrevEl}
+            type="button"
+            aria-label={t.hero.previous}
+            className="pointer-events-auto flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-slate-900/40 text-white/80 transition-colors duration-150 hover:bg-slate-900/60 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+          >
+            <IconChevronLeft aria-hidden className="h-5 w-5 sm:h-6 sm:w-6" />
+          </button>
+          <button
+            ref={setNextEl}
+            type="button"
+            aria-label={t.hero.next}
+            className="pointer-events-auto flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-slate-900/40 text-white/80 transition-colors duration-150 hover:bg-slate-900/60 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+          >
+            <IconChevronRight aria-hidden className="h-5 w-5 sm:h-6 sm:w-6" />
+          </button>
+        </div>
 
-      <div className="absolute right-4 bottom-12 z-10 flex items-center gap-2 rounded-full bg-slate-900/60 px-3 py-2 text-white sm:right-6 sm:bottom-5">
-        <button
-          type="button"
-          aria-label={muted ? t.hero.unmute : t.hero.mute}
-          aria-pressed={!muted}
-          onClick={() => applySound(!muted, !muted || volume > 0 ? volume : 1)}
-          className="cursor-pointer text-white/80 transition-colors duration-150 hover:text-white"
-        >
-          <VolumeIcon muted={muted} className="h-5 w-5" />
-        </button>
-        <input
-          type="range"
-          min={0}
-          max={1}
-          step={0.05}
-          value={muted ? 0 : volume}
-          aria-label={t.hero.volume}
-          onChange={(event) => {
-            const next = Number(event.target.value);
-            applySound(next === 0, next);
-          }}
-          className="h-1 w-20 cursor-pointer accent-white sm:w-24"
+        <div className="absolute top-4 right-4 z-10 flex items-center gap-2 rounded-full bg-slate-900/60 px-3 py-2 text-white sm:top-auto sm:right-6 sm:bottom-5">
+          <button
+            type="button"
+            aria-label={muted ? t.hero.unmute : t.hero.mute}
+            aria-pressed={!muted}
+            onClick={() =>
+              applySound(!muted, !muted || volume > 0 ? volume : 1)
+            }
+            className="cursor-pointer text-white/80 transition-colors duration-150 hover:text-white"
+          >
+            {muted ? (
+              <IconVolumeOff aria-hidden className="h-5 w-5" />
+            ) : (
+              <IconVolume aria-hidden className="h-5 w-5" />
+            )}
+          </button>
+          <input
+            type="range"
+            min={0}
+            max={1}
+            step={0.05}
+            value={muted ? 0 : volume}
+            aria-label={t.hero.volume}
+            onChange={(event) => {
+              const next = Number(event.target.value);
+              applySound(next === 0, next);
+            }}
+            className="h-1 w-20 cursor-pointer accent-white sm:w-24"
+          />
+        </div>
+
+        <div
+          ref={setPaginationEl}
+          className="absolute inset-x-0 bottom-5 z-10 flex items-center justify-center gap-2"
+          style={
+            {
+              "--swiper-pagination-color": "#ffffff",
+              "--swiper-pagination-bullet-inactive-color": "#ffffff",
+              "--swiper-pagination-bullet-inactive-opacity": 0.5,
+              "--swiper-pagination-bullet-width": "24px",
+              "--swiper-pagination-bullet-height": "4px",
+              "--swiper-pagination-bullet-border-radius": "2px",
+            } as CSSProperties
+          }
         />
       </div>
-
-      <div
-        ref={setPaginationEl}
-        className="absolute inset-x-0 bottom-5 z-10 flex items-center justify-center gap-2"
-        style={
-          {
-            "--swiper-pagination-color": "#ffffff",
-            "--swiper-pagination-bullet-inactive-color": "#ffffff",
-            "--swiper-pagination-bullet-inactive-opacity": 0.5,
-            "--swiper-pagination-bullet-width": "24px",
-            "--swiper-pagination-bullet-height": "4px",
-            "--swiper-pagination-bullet-border-radius": "2px",
-          } as CSSProperties
-        }
-      />
     </section>
   );
 }

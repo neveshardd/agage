@@ -1,14 +1,32 @@
+import type { SiteImages } from "@/content/images";
 import { type Locale, localizeHref } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
 import type { NavItemData } from "./types";
 
-export function getNavItems(t: Dictionary, locale: Locale): NavItemData[] {
+/**
+ * Navegação principal: só links para páginas (sem âncoras da página inicial). Missão, visão e
+ * valores e Integração ficam como links diretos; as demais páginas, no único item com submenu.
+ * As fotos do mega menu são slots editáveis no backoffice.
+ */
+export function getNavItems(
+  t: Dictionary,
+  locale: Locale,
+  images: SiteImages,
+): NavItemData[] {
   const href = (path: string) => localizeHref(locale, path);
 
   return [
     {
+      label: t.navbar.agage.missionVisionValues,
+      href: href("/missao-visao-e-valores"),
+    },
+    {
+      label: t.collaborator.links.onboarding,
+      href: href("/integracao"),
+    },
+    {
       label: t.navbar.agage.label,
-      href: href("/#sobre"),
+      href: href("/politica-de-privacidade"),
       megaMenu: {
         columns: [
           {
@@ -16,18 +34,10 @@ export function getNavItems(t: Dictionary, locale: Locale): NavItemData[] {
               {
                 heading: t.navbar.agage.institutional,
                 links: [
-                  { label: t.navbar.agage.aboutUs, href: href("/#sobre") },
                   {
-                    label: t.navbar.agage.missionVisionValues,
-                    href: href("/missao-visao-e-valores"),
-                  },
-                  {
-                    label: t.navbar.agage.certifications,
-                    href: href("/#certificacoes"),
-                  },
-                  {
-                    label: t.navbar.agage.skilledLabor,
-                    href: href("/#mao-de-obra"),
+                    label: t.privacy.title,
+                    href: href("/politica-de-privacidade"),
+                    image: images["navbar.privacy"],
                   },
                 ],
               },
@@ -36,25 +46,17 @@ export function getNavItems(t: Dictionary, locale: Locale): NavItemData[] {
           {
             sections: [
               {
-                heading: t.navbar.agage.operations,
+                heading: t.collaborator.menuHeading,
                 links: [
                   {
-                    label: t.navbar.agage.whereWeWork,
-                    href: href("/#onde-atuamos"),
+                    label: t.collaborator.links.safety,
+                    href: href("/seguranca-do-trabalho"),
+                    image: images["navbar.safety"],
                   },
-                  { label: t.navbar.agage.ourProjects, href: href("/#obras") },
-                ],
-              },
-            ],
-          },
-          {
-            sections: [
-              {
-                heading: t.navbar.agage.transparency,
-                links: [
                   {
-                    label: t.navbar.agage.ombudsman,
-                    href: href("/#ouvidoria"),
+                    label: t.collaborator.links.documents,
+                    href: href("/documentos"),
+                    image: images["navbar.documents"],
                   },
                 ],
               },
@@ -63,8 +65,5 @@ export function getNavItems(t: Dictionary, locale: Locale): NavItemData[] {
         ],
       },
     },
-    { label: t.common.services, href: href("/#servicos") },
-    { label: t.navbar.projects, href: href("/#obras") },
-    { label: t.navbar.contact, href: href("/#contato") },
   ];
 }

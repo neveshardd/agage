@@ -3,6 +3,7 @@
 import { Dialog } from "@base-ui/react/dialog";
 import Image from "next/image";
 import { useState } from "react";
+import { projectImageKey } from "@/content/images";
 import { useI18n } from "@/i18n/I18nProvider";
 import { BRAZIL_MAP_SRC, VIEWBOX_HEIGHT, VIEWBOX_WIDTH } from "./data";
 import type { ProjectedLocationMarker } from "./types";
@@ -43,7 +44,7 @@ export function BrazilMap({
 }: {
   locations: ProjectedLocationMarker[];
 }) {
-  const { t } = useI18n();
+  const { t, images } = useI18n();
   // `selected` é mantido depois de fechar para o conteúdo continuar visível
   // durante a animação de saída do modal.
   const [selected, setSelected] = useState<ProjectedLocationMarker | null>(
@@ -124,7 +125,7 @@ export function BrazilMap({
               <>
                 <div className="relative h-48 w-full">
                   <Image
-                    src={selected.project.image}
+                    src={images[projectImageKey(selected.project.id)]}
                     alt={t.projects[selected.project.id].title}
                     fill
                     sizes="(min-width: 480px) 448px, 100vw"
@@ -138,7 +139,7 @@ export function BrazilMap({
                   </Dialog.Title>
 
                   <p className="mt-1 text-sm text-slate-500">
-                    {selected.city} — {selected.state}
+                    {selected.city}, {selected.state}
                   </p>
 
                   <Dialog.Description className="mt-4 text-sm leading-relaxed text-slate-600">

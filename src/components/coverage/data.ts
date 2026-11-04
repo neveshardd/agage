@@ -20,7 +20,6 @@ export const COVERAGE_LOCATIONS: LocationMarker[] = [
     project: {
       id: "parque-eolico-novo-horizonte",
       client: "Pan American Energy / Andrade Gutierrez",
-      image: "/parque-eolico.jpg",
     },
   },
   {
@@ -30,7 +29,6 @@ export const COVERAGE_LOCATIONS: LocationMarker[] = [
     project: {
       id: "reassentamento-bento-rodrigues",
       client: "Fundação Renova / HTB",
-      image: "/mariana-01.jpg",
     },
   },
   {
@@ -40,7 +38,6 @@ export const COVERAGE_LOCATIONS: LocationMarker[] = [
     project: {
       id: "rio-piracicaba",
       client: "BTEC Construções",
-      image: "/drenagem.jpg",
     },
   },
   {
@@ -50,7 +47,6 @@ export const COVERAGE_LOCATIONS: LocationMarker[] = [
     project: {
       id: "viaduto-perimetral",
       client: "Consórcio BRT Goiânia",
-      image: "/viaduto-perimetral.jpg",
     },
   },
   {
@@ -60,7 +56,6 @@ export const COVERAGE_LOCATIONS: LocationMarker[] = [
     project: {
       id: "pavimentacao-anapolis",
       client: "Prefeitura de Anápolis",
-      image: "/pavimentacao-anapolis.jpg",
     },
   },
   {
@@ -70,7 +65,6 @@ export const COVERAGE_LOCATIONS: LocationMarker[] = [
     project: {
       id: "residencia-oficial-cni",
       client: "Confederação Nacional da Indústria",
-      image: "/cni.jpg",
     },
   },
   {
@@ -80,7 +74,6 @@ export const COVERAGE_LOCATIONS: LocationMarker[] = [
     project: {
       id: "fabrica-de-cimentos",
       client: "Votorantim",
-      image: "/fabrica-de-cimentos.jpg",
     },
   },
   {
@@ -90,7 +83,6 @@ export const COVERAGE_LOCATIONS: LocationMarker[] = [
     project: {
       id: "uhe-queimados",
       client: "Consórcio CEMIG e CEB",
-      image: "/uhe-queimados-01.jpg",
     },
   },
   {
@@ -101,7 +93,6 @@ export const COVERAGE_LOCATIONS: LocationMarker[] = [
       id: "aeroporto-de-macae",
       inGallery: false,
       client: "Conserva",
-      image: "/concretagem.jpg",
     },
   },
 ];

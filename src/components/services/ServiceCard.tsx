@@ -1,9 +1,18 @@
-import type { ServiceData } from "./types";
+import type { ServiceAccent, ServiceData } from "./types";
 
-const ICON_ACCENT_STYLES = {
-  orange: "text-brand-orange",
-  blue: "text-brand-blue",
-} as const;
+// Classes completas (não interpoladas) para o Tailwind encontrá-las.
+const ACCENT_STYLES: Readonly<
+  Record<ServiceAccent, { tile: string; bar: string }>
+> = {
+  orange: {
+    tile: "bg-brand-orange/10 text-brand-orange-dark",
+    bar: "bg-brand-orange",
+  },
+  blue: {
+    tile: "bg-brand-blue/10 text-brand-blue",
+    bar: "bg-brand-blue",
+  },
+};
 
 export function ServiceCard({
   service,
@@ -15,22 +24,32 @@ export function ServiceCard({
   description: string;
 }) {
   const Icon = service.icon;
+  const accent = ACCENT_STYLES[service.accent];
 
   return (
-    <div
+    <article
       data-reveal
-      className="flex h-full flex-col gap-3 border border-brand-blue p-6 transition-colors duration-300 hover:bg-slate-50"
+      className="relative flex h-full flex-col gap-5 bg-white p-7 sm:p-8"
     >
-      <div className="flex items-center gap-3">
-        <Icon
-          className={`h-7 w-7 shrink-0 ${ICON_ACCENT_STYLES[service.accent]}`}
-        />
-        <h3 className="text-lg font-bold text-brand-navy">{title}</h3>
+      <span
+        aria-hidden
+        className={`absolute top-0 left-7 h-1 w-10 rounded-b-sm sm:left-8 ${accent.bar}`}
+      />
+
+      <div className="flex items-start justify-between gap-4">
+        <h3 className="pt-1 text-lg leading-snug font-bold text-brand-navy">
+          {title}
+        </h3>
+        <span
+          className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-xl ${accent.tile}`}
+        >
+          <Icon aria-hidden stroke={1.6} className="h-7 w-7" />
+        </span>
       </div>
 
       <p className="flex-1 text-sm leading-relaxed text-slate-600">
         {description}
       </p>
-    </div>
+    </article>
   );
 }

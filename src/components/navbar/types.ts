@@ -1,6 +1,8 @@
 export interface MegaMenuLinkData {
   label: string;
   href: string;
+  /** Foto quadrada exibida à direita do mega menu quando o link está em foco. */
+  image: string;
 }
 
 export interface MegaMenuSectionData {

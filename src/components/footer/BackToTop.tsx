@@ -1,8 +1,8 @@
 "use client";
 
+import { IconArrowUp } from "@tabler/icons-react";
 import { useEffect, useRef, useState } from "react";
 import { useI18n } from "@/i18n/I18nProvider";
-import { ArrowUpIcon } from "./icons/ArrowUpIcon";
 
 export function BackToTop() {
   const { t } = useI18n();
@@ -29,13 +29,13 @@ export function BackToTop() {
       aria-hidden={!visible}
       tabIndex={visible ? 0 : -1}
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-      className={`fixed bottom-6 right-6 z-30 flex h-11 w-11 cursor-pointer items-center justify-center border border-white/20 bg-brand-navy text-white transition-[opacity,translate,background-color] duration-200 hover:bg-brand-navy/80 ${
+      className={`fixed right-2.5 bottom-2.5 z-30 flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-brand-orange text-white shadow-lg shadow-slate-900/25 transition-[opacity,translate,background-color] duration-200 hover:bg-brand-orange-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white ${
         visible
           ? "translate-y-0 opacity-100"
           : "pointer-events-none translate-y-2 opacity-0"
       }`}
     >
-      <ArrowUpIcon className="h-4 w-4" />
+      <IconArrowUp aria-hidden className="h-5 w-5" />
     </button>
   );
 }

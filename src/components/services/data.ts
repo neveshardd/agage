@@ -1,30 +1,36 @@
-import { BridgeIcon } from "./icons/BridgeIcon";
-import { BuildingIcon } from "./icons/BuildingIcon";
-import { DropletIcon } from "./icons/DropletIcon";
-import { FactoryIcon } from "./icons/FactoryIcon";
-import { HardHatIcon } from "./icons/HardHatIcon";
-import { PillarsIcon } from "./icons/PillarsIcon";
-import { RoadIcon } from "./icons/RoadIcon";
-import { ShovelIcon } from "./icons/ShovelIcon";
-import { TerrainIcon } from "./icons/TerrainIcon";
-import { WallIcon } from "./icons/WallIcon";
-import { WavesIcon } from "./icons/WavesIcon";
-import { WrenchIcon } from "./icons/WrenchIcon";
+import {
+  IconBuilding,
+  IconBuildingBank,
+  IconBuildingBridge2,
+  IconBuildingFactory2,
+  IconDroplet,
+  IconHelmet,
+  IconMountain,
+  IconRipple,
+  IconRoad,
+  IconShovel,
+  IconTool,
+  IconWall,
+} from "@tabler/icons-react";
 import type { ServiceData } from "./types";
 
 // Os textos de cada serviço ficam nos dicionários (src/i18n/dictionaries),
 // indexados pelo slug.
 export const SERVICES: ServiceData[] = [
-  { slug: "obras-civis", icon: BuildingIcon, accent: "orange" },
-  { slug: "pavimentacao", icon: RoadIcon, accent: "blue" },
-  { slug: "escavacao", icon: ShovelIcon, accent: "orange" },
-  { slug: "impermeabilizacao", icon: DropletIcon, accent: "blue" },
-  { slug: "terraplenagem", icon: TerrainIcon, accent: "orange" },
-  { slug: "obras-de-infraestrutura", icon: PillarsIcon, accent: "blue" },
-  { slug: "obras-de-contencao", icon: WallIcon, accent: "orange" },
-  { slug: "fornecimento-de-mao-de-obra", icon: HardHatIcon, accent: "blue" },
-  { slug: "obras-de-drenagem", icon: WavesIcon, accent: "orange" },
-  { slug: "obras-industriais", icon: FactoryIcon, accent: "blue" },
-  { slug: "obras-de-artes-especiais", icon: BridgeIcon, accent: "orange" },
-  { slug: "tratamento-de-estrutura", icon: WrenchIcon, accent: "blue" },
+  { slug: "obras-civis", icon: IconBuilding, accent: "orange" },
+  { slug: "pavimentacao", icon: IconRoad, accent: "blue" },
+  { slug: "escavacao", icon: IconShovel, accent: "orange" },
+  { slug: "impermeabilizacao", icon: IconDroplet, accent: "blue" },
+  { slug: "terraplenagem", icon: IconMountain, accent: "orange" },
+  { slug: "obras-de-infraestrutura", icon: IconBuildingBank, accent: "blue" },
+  { slug: "obras-de-contencao", icon: IconWall, accent: "orange" },
+  { slug: "fornecimento-de-mao-de-obra", icon: IconHelmet, accent: "blue" },
+  { slug: "obras-de-drenagem", icon: IconRipple, accent: "orange" },
+  { slug: "obras-industriais", icon: IconBuildingFactory2, accent: "blue" },
+  {
+    slug: "obras-de-artes-especiais",
+    icon: IconBuildingBridge2,
+    accent: "orange",
+  },
+  { slug: "tratamento-de-estrutura", icon: IconTool, accent: "blue" },
 ];

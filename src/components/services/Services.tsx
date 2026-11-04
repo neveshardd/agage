@@ -8,7 +8,7 @@ export async function Services() {
   return (
     <section
       id="servicos"
-      className="mx-auto w-full max-w-7xl px-6 py-24 sm:py-32 lg:px-10"
+      className="mx-auto w-full max-w-screen-2xl px-6 py-24 sm:py-32 lg:px-10"
     >
       <h2
         data-reveal
@@ -17,7 +17,7 @@ export async function Services() {
         {t.servicesSection.title}
       </h2>
 
-      <div className="mt-16 grid sm:mt-20 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-16 grid gap-px overflow-hidden rounded-2xl border border-slate-200 bg-slate-200 sm:mt-20 sm:grid-cols-2 lg:grid-cols-3">
         {SERVICES.map((service) => (
           <ServiceCard
             key={service.slug}

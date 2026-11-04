@@ -1,3 +1,4 @@
+import { privacyZh } from "./privacy/zh";
 import type { Dictionary } from "./pt";
 
 export const zh: Dictionary = {
@@ -14,6 +15,7 @@ export const zh: Dictionary = {
   },
   navbar: {
     logoLabel: "AGAGE — 首页",
+    utilityNav: "快捷链接",
     openMenu: "打开菜单",
     closeMenu: "关闭菜单",
     mainNav: "主导航",
@@ -22,18 +24,9 @@ export const zh: Dictionary = {
     agage: {
       label: "关于 AGAGE",
       institutional: "公司介绍",
-      aboutUs: "关于我们",
       missionVisionValues: "使命、愿景与价值观",
-      certifications: "资质认证",
-      skilledLabor: "专业技术人员",
-      operations: "业务范围",
-      whereWeWork: "业务区域",
-      ourProjects: "我们的工程",
-      transparency: "透明度",
       ombudsman: "监察与举报",
     },
-    projects: "工程项目",
-    contact: "联系我们",
   },
   hero: {
     previous: "上一张",
@@ -173,19 +166,15 @@ export const zh: Dictionary = {
   servicesSection: {
     title: "我们的服务",
   },
-  cta: {
-    imageAlt: "AGAGE 团队在施工现场",
-    title: "为您的下一个项目提供工程解决方案",
-    text: "欢迎联系 AGAGE 技术团队，了解我们在土木建筑与工业安装方面的解决方案。",
-    button: "联系我们",
-  },
   ombudsman: {
-    imageAlt: "AGAGE 员工在施工现场",
     logoAlt: "监察与举报",
     qrLabel: "进入监察与举报渠道",
     qrAlt: "监察渠道二维码",
     title: "监察与举报渠道",
     text: "直达公司管理层的沟通渠道，采用端到端加密，确保举报人匿名。",
+    cardText:
+      "点击链接或用手机摄像头扫描二维码即可访问。举报人的匿名性受到保障。",
+    button: "进入渠道",
   },
   footer: {
     quickAccess: "快速链接",
@@ -196,7 +185,7 @@ export const zh: Dictionary = {
     whereWeWork: "业务区域",
     certifications: "资质认证",
     ombudsman: "监察与举报",
-    rights: "AGAGE 工程与工业安装。保留所有权利",
+    rights: "AGAGE。保留所有权利",
     privacy: "隐私政策",
     developedBy: "开发者",
     backToTop: "返回顶部",
@@ -212,6 +201,159 @@ export const zh: Dictionary = {
       "成为工程领域卓越与信赖的标杆，以技术质量、安全以及对客户和合作伙伴成功的承诺而脱颖而出。",
     valuesTitle: "我们的价值观",
     values: ["绝对安全", "注重成果", "道德与合规", "团队协作", "尊重客户"],
+  },
+  collaborator: {
+    menu: "员工",
+    menuHeading: "员工专区",
+    links: {
+      onboarding: "入职培训",
+      safety: "职业安全",
+      documents: "公司文件",
+    },
+    video: {
+      heading: "观看视频",
+      unavailable: "视频即将上线。",
+      unsupported: "您的浏览器无法播放此视频。",
+    },
+    documents: {
+      heading: "文件",
+      empty: "目前没有已发布的文件。",
+      emptyHint: "文件发布后，将显示在这里，供查看和下载。",
+      open: "打开",
+      download: "下载",
+      revision: "版本",
+      updated: "更新于",
+      unavailable: "暂时无法加载内容，请几分钟后重试。",
+    },
+    onboarding: {
+      title: "入职培训",
+      metaDescription:
+        "AGAGE 新员工入职培训：内部规章、职责、工作时间、禁止事项和处罚。",
+      intro:
+        "欢迎加入 AGAGE。本页汇总了您入职第一天需要了解的内容：让团队高效运转的规则，从普工到总监，人人适用。",
+      pillars: ["尊重", "责任", "安全"],
+      sections: [
+        {
+          title: "内部规章",
+          text: "内部规章是您劳动合同的一部分。它不是一纸空文，而是一份承诺，无论职位高低，人人适用。",
+          items: [],
+        },
+        {
+          title: "您的职责",
+          text: "日常工作中对您的要求：",
+          items: [
+            "认真细致地完成工作，服从上级的安排。",
+            "保持工作场所整洁、有序、守纪。",
+            "只在公司指定的地点用餐。",
+            "打卡前将个人物品存放在储物柜中。",
+            "正确使用个人防护用品，尊重集体防护设施，并参加安全培训。",
+            "对给公司造成的损失负责，包括设备、车辆损坏和交通罚款。",
+          ],
+        },
+        {
+          title: "工作时间与考勤",
+          text: "标准工作时间为每周 44 小时。考勤由本人严格打卡：替同事打卡属于严重违纪。",
+          items: [],
+        },
+        {
+          title: "禁止事项",
+          text: "规章明确禁止：",
+          items: [
+            "任何形式的歧视或骚扰。",
+            "利用机密信息谋取私利或泄露薪酬。",
+            "收受或提供贿赂、礼品或任何不正当利益。",
+            "无故缺勤或在无法律依据的情况下组织停工。",
+            "未经许可使用手机、电子设备或 U 盘。",
+            "利用公司的时间、工具或材料从事私活。",
+          ],
+        },
+        {
+          title: "工作中的人际关系",
+          text: "同事之间的恋爱关系应告知公司，以避免利益冲突，尤其是存在上下级关系或在同一团队工作时。",
+          items: [],
+        },
+        {
+          title: "处罚",
+          text: "根据违规的严重程度执行：",
+          items: [
+            "口头警告。",
+            "书面警告。",
+            "停工 1 至 2 天。",
+            "情节最严重的，予以正当理由解雇。",
+          ],
+        },
+      ],
+      closing:
+        "有任何疑问？请咨询您的班组长或人力资源部。做好您的那一份，其余的我们一起建设。欢迎加入团队！",
+    },
+    safety: {
+      title: "职业安全",
+      metaDescription:
+        "AGAGE 职业健康与安全计划：PGR、PCMSO、PCA、PPR、AET、个人防护用品和关键作业。",
+      intro:
+        "在 AGAGE，最重要的目标高于工期和产量，只有一个：每个人都平安回家。因此，职业健康与安全依据巴西劳动和就业部的监管标准（NR）组织为多项强制性计划。",
+      programsTitle: "我们的计划",
+      programs: [
+        {
+          acronym: "PGR",
+          name: "风险管理计划",
+          norm: "NR-1",
+          text: "梳理每个岗位的风险，描述工作环境特征，并制定消除或控制各项风险的行动计划。",
+        },
+        {
+          acronym: "PCMSO",
+          name: "职业健康医疗监控计划",
+          norm: "NR-7",
+          text: "通过入职、定期、复工、岗位风险变更和离职体检，预防疾病并及早发现问题。",
+        },
+        {
+          acronym: "PCA",
+          name: "听力保护计划",
+          norm: "",
+          text: "使用噪声剂量计测量噪声，并通过听力测试跟踪您的听力。在规定情况下全程正确佩戴护耳器。",
+        },
+        {
+          acronym: "PPR",
+          name: "呼吸防护计划",
+          norm: "NR-6、NR-9、NR-15 和 NR-18",
+          text: "为每项作业选定合适的呼吸器（如 PFF2 和 PFF3 口罩），并提供正确使用的培训。挂在下巴上的口罩起不到防护作用；脏污、压皱或过期的口罩必须更换。",
+        },
+        {
+          acronym: "AET",
+          name: "工作人机工效分析",
+          norm: "NR-17",
+          text: "使工作适应劳动者的身心，预防腰痛、拉伤和疲劳。搬重物时屈膝，重物请他人协助，并按时休息。",
+        },
+      ],
+      sections: [
+        {
+          title: "个人防护用品与集体防护",
+          text: "正确使用个人防护用品、尊重集体防护设施是每个人的义务。领取的每件防护用品都会登记在您的防护用品卡上：损坏、丢失或过期请申请更换。未经许可，切勿拆除集体防护设施。",
+          items: [],
+        },
+        {
+          title: "关键作业",
+          text: "开展任何危险作业前，团队都要进行初步风险分析（APR），您也会收到本岗位的作业指令。以下三类作业必须经过培训并获得正式授权，没有例外：",
+          items: [
+            "电气作业（NR-10）。",
+            "受限空间作业（NR-33）。",
+            "高处作业（NR-35）。",
+          ],
+        },
+        {
+          title: "脚手架",
+          text: "脚手架和金属平台依据技术手册搭设，并由负责工程师出具技术责任备案（ART）。发现脚手架没有标识、缺少部件或未经批准被改动？不要攀爬，立即报告。",
+          items: [],
+        },
+      ],
+      closing:
+        "发现危险情况？请告知安全技术员或您的班组长。报告不是告密，而是关心身边的同事。",
+    },
+    institutional: {
+      title: "公司文件",
+      metaDescription: "AGAGE 现行的内部规章、政策及其他公司文件。",
+      intro: "AGAGE 现行的内部规章、政策及其他公司文件，可在线查看和下载。",
+    },
   },
   services: {
     "obras-civis": {
@@ -264,4 +406,5 @@ export const zh: Dictionary = {
       description: "混凝土结构和钢结构的修复、加固与防护。",
     },
   },
+  privacy: privacyZh,
 };
