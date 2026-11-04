@@ -104,11 +104,12 @@ export function BrazilMap({
                 aria-label={`${t.coverage.viewDetails}: ${t.projects[location.project.id].title}`}
                 className="cursor-pointer outline-none"
               >
+                {/* Pequenos para cidades próximas (ex.: Goiânia e Anápolis) não se sobreporem. */}
                 <circle
-                  r={13}
-                  className="fill-white stroke-brand-blue stroke-[3px] transition-transform duration-150 hover:scale-110"
+                  r={7}
+                  className="fill-white stroke-brand-blue stroke-2 transition-transform duration-150 hover:scale-110"
                 />
-                <circle r={5.5} className="fill-brand-blue" />
+                <circle r={3} className="fill-brand-blue" />
               </g>
             );
           })}

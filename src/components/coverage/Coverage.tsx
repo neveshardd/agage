@@ -4,12 +4,20 @@ import { localizeHref } from "@/i18n/config";
 import { getI18n } from "@/i18n/server";
 import { BrazilMap } from "./BrazilMap";
 import { COVERAGE_LOCATIONS } from "./data";
-import { projectPoint } from "./projection";
+import { projectPoint, separatePoints } from "./projection";
 
-// Projetado uma vez no servidor, para o navegador não precisar do d3.
-const LOCATIONS = COVERAGE_LOCATIONS.map((location) => ({
+/** Distância mínima entre marcadores, no viewBox (raio 7 + borda, com folga). */
+const MARKER_SPACING = 17;
+
+// Projetado uma vez no servidor, para o navegador não precisar do d3. Marcadores de cidades
+// muito próximas são afastados o suficiente para não se sobreporem.
+const POINTS = separatePoints(
+  COVERAGE_LOCATIONS.map((location) => projectPoint(location.coordinates)),
+  MARKER_SPACING,
+);
+const LOCATIONS = COVERAGE_LOCATIONS.map((location, index) => ({
   ...location,
-  point: projectPoint(location.coordinates),
+  point: POINTS[index] ?? projectPoint(location.coordinates),
 }));
 
 export async function Coverage() {

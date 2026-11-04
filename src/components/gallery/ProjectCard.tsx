@@ -13,7 +13,7 @@ export function ProjectCard({ location }: { location: LocationMarker }) {
   const image = images[projectImageKey(location.project.id)];
 
   return (
-    <article className="relative isolate flex aspect-3/4 flex-col justify-between overflow-hidden rounded-2xl bg-brand-navy text-white">
+    <article className="relative isolate flex aspect-3/4 flex-col justify-between overflow-hidden rounded-2xl border-[6px] border-brand-orange bg-brand-navy text-white">
       <Image
         src={image}
         alt=""
